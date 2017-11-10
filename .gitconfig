@@ -1,0 +1,25 @@
+[core]
+	excludesfile = /Users/joe.spilmanATultrahaptics.com/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = Joe Spilman
+	email = joe.spilman@ultrahaptics.com
+[commit]
+	template = /Users/joe.spilmanATultrahaptics.com/.stCommitMsg
+[alias]
+	st = status
+	co = checkout
+	ci = commit -v
+	br = branch
+	lg = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short
+	lga = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short --all
