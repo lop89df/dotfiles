@@ -23,3 +23,7 @@
 	br = branch
 	lg = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short
 	lga = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short --all
+[branch]
+	autosetuprebase = always
+[pull]
+	rebase = true
