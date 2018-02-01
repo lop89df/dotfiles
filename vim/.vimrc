@@ -14,6 +14,16 @@ Plugin 'vim-airline/vim-airline'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'vim-scripts/ReplaceWithRegister'
+
+Plugin 'sjl/vitality.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -37,5 +47,8 @@ syntax on
 set number
 
 set backspace=indent,eol,start
+
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 filetype plugin indent on
