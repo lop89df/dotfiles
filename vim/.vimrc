@@ -24,6 +24,10 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 
 Plugin 'sjl/vitality.vim'
 
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'gilligan/vim-lldb'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,12 +45,22 @@ filetype plugin indent on    " required
 
 let g:ycm_global_ycm_extra_conf = expand('$HOME/.vim/ycm_extra_conf.py')
 let g:ycm_extra_conf_vim_data = ['getcwd()']
+let g:ycm_ad_preview_to_completeopt = 1
+
+highlight YcmErrorLine guibg=#ff9923
+highlight YcmWarningSign guibg=#ffff33
 
 syntax on
 
 set number
 
 set backspace=indent,eol,start
+
+set mouse=a
+
+set wildmenu
+
+set wildmode=longest:full,full 
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
