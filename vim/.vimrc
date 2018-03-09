@@ -1,4 +1,3 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -25,8 +24,6 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'sjl/vitality.vim'
 
 Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'gilligan/vim-lldb'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

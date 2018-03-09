@@ -3,8 +3,6 @@
 	email = joe.spilman@ultrahaptics.com
 [push]
 	default = current
-[commit]
-	template = /Users/joe.spilmanATultrahaptics.com/.stCommitMsg
 [alias]
 	st = status
 	co = checkout
