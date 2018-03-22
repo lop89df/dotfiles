@@ -25,6 +25,12 @@ Plugin 'sjl/vitality.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 
+Plugin 'kana/vim-textobj-user'
+
+Plugin 'Julian/vim-textobj-variable-segment'
+
+Plugin 'sgur/vim-textobj-parameter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,6 +64,10 @@ set mouse=a
 set wildmenu
 
 set wildmode=longest:full,full 
+
+set list                        " show chars defined in 'listchars' 
+set listchars=tab:❭\            " list of strings used for list mode
+set listchars+=extends:❯,precedes:❮
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
