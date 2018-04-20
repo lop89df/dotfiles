@@ -5,3 +5,7 @@ alias make1='make -j1'
 # Git
 alias gaa='git add --all'
 alias gsu='git submodule-update --recursive'
+
+# Tmux
+alias tmux='tmux -2'
+alias mux='tmuxinator'
