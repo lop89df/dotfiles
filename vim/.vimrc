@@ -31,6 +31,8 @@ Plugin 'Julian/vim-textobj-variable-segment'
 
 Plugin 'sgur/vim-textobj-parameter'
 
+Plugin 'flazz/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +54,7 @@ let g:ycm_global_ycm_extra_conf = expand('$HOME/.vim/ycm_extra_conf.py')
 let g:ycm_extra_conf_vim_data = ['getcwd()']
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1  
+let g:ycm_always_populate_location_list = 1
 
 highlight YcmErrorLine guibg=#ff9923
 highlight YcmWarningSign guibg=#ffff33
@@ -60,11 +63,22 @@ highlight YcmWarningSign guibg=#ffff33
 
 let g:NERDTreeWinPos = "right"
 
-set noswapfile
+""" Colour-Schemes & Visual Settings
+
+set fillchars=diff:⣿
+
+set background=dark
+
+colorscheme gruvbox
 
 syntax on
 
 set number
+
+set splitright
+set splitbelow
+
+set noswapfile
 
 set backspace=indent,eol,start
 
