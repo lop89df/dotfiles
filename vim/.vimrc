@@ -23,8 +23,6 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 
 Plugin 'sjl/vitality.vim'
 
-Plugin 'Valloric/YouCompleteMe'
-
 Plugin 'kana/vim-textobj-user'
 
 Plugin 'Julian/vim-textobj-variable-segment'
@@ -32,6 +30,10 @@ Plugin 'Julian/vim-textobj-variable-segment'
 Plugin 'sgur/vim-textobj-parameter'
 
 Plugin 'flazz/vim-colorschemes'
+
+if !has('win32unix')
+	Plugin 'Valloric/YouCompleteMe'
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,18 +50,22 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-""" YouCompleteMe
+if !has('win32unix')
 
-let g:ycm_global_ycm_extra_conf = expand('$HOME/.vim/ycm_extra_conf.py')
-let g:ycm_extra_conf_vim_data = ['getcwd()']
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1  
-let g:ycm_always_populate_location_list = 1
+	""" YouCompleteMe
 
-nnoremap ,gl :YcmCompleter GoToDeclaration<CR>
+	let g:ycm_global_ycm_extra_conf = expand('$HOME/.vim/ycm_extra_conf.py')
+	let g:ycm_extra_conf_vim_data = ['getcwd()']
+	let g:ycm_add_preview_to_completeopt = 1
+	let g:ycm_autoclose_preview_window_after_insertion = 1  
+	let g:ycm_always_populate_location_list = 1
 
-highlight YcmErrorLine guibg=#ff9923
-highlight YcmWarningSign guibg=#ffff33
+	nnoremap ,gl :YcmCompleter GoToDeclaration<CR>
+
+	highlight YcmErrorLine guibg=#ff9923
+	highlight YcmWarningSign guibg=#ffff33
+
+endif
 
 """ NERDTree
 
