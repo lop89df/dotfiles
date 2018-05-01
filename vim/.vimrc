@@ -56,6 +56,8 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1  
 let g:ycm_always_populate_location_list = 1
 
+nnoremap ,gl :YcmCompleter GoToDeclaration<CR>
+
 highlight YcmErrorLine guibg=#ff9923
 highlight YcmWarningSign guibg=#ffff33
 
