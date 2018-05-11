@@ -1,0 +1,31 @@
+pane	2	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	1	zsh	:
+pane	2	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	vim	:vim -S Session.vim
+pane	2	1	:examples	0	:-	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs	1	zsh	:
+pane	AR	0	:build	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	1	git	:git diff
+pane	AR	0	:build	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	zsh	:
+pane	AR	0	:build	1	:*	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	vim	:vim /Users/joe.spilmanATultrahaptics.com/.vimrc
+pane	AR	1	:debug	0	:	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	vim	:vim -S Session.vim
+pane	AR	1	:debug	0	:	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/debug_runs	1	zsh	:
+pane	AR	1	:debug	0	:	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/debug_runs	0	vim	:vim modelconfig_dragonfly.xml
+pane	AR	2	:robot	0	:	0	:/Users/joe.spilmanATultrahaptics.com/robot_data	1	zsh	:
+pane	AR	2	:robot	0	:	1	:/Users/joe.spilmanATultrahaptics.com/robot_data	0	vim	:vim rearange_data.py
+pane	AR	3	:simulations	0	:-	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/phase_interference/static_maxima	1	zsh	:
+pane	AR	3	:simulations	0	:-	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/phase_interference/static_maxima	0	vim	:vim ordered_coeffs
+pane	AR	3	:simulations	0	:-	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/phase_interference/static_maxima	0	vim	:vim modelconfig_dragonfly.xml
+vim modelconfig_dragonfly.xml
+vim pressures
+vim pressures
+pane	SDK	0	:.._ultrahaptics	1	:*Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics/build/examples/cpp	0	zsh	:
+pane	SDK	0	:.._ultrahaptics	1	:*Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	1	vim	:vim
+vim lib_hardware/src/HardwareBuilder.cpp
+pane	config	0	:~/.dotfiles	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/.dotfiles	0	zsh	:
+pane	config	0	:~/.dotfiles	1	:*	1	:/Users/joe.spilmanATultrahaptics.com	1	vim	:vim .vimrc
+window	2	0	1	:*	3d29,356x80,0,0{178x80,0,0,29,177x80,179,0,28}
+window	2	1	0	:-	dbb6,356x80,0,0,27
+window	AR	0	1	:*	e3ad,356x80,0,0{180x80,0,0[180x40,0,0,13,180x39,0,41,30],175x80,181,0,2}
+window	AR	1	0	:	c38b,356x80,0,0[356x46,0,0,1,356x33,0,47{180x33,0,47,3,175x33,181,47,23}]
+window	AR	2	0	:	de25,356x80,0,0{180x80,0,0,22,175x80,181,0,19}
+window	AR	3	0	:-	23b1,356x80,0,0{180x80,0,0[180x40,0,0,14,180x39,0,41,21],175x80,181,0,6}
+window	SDK	0	1	:*Z	64af,362x80,0,0{183x80,0,0,7,178x80,184,0,8}
+window	config	0	1	:*	82d5,356x80,0,0{161x80,0,0,9,194x80,162,0,10}
+state	AR	SDK

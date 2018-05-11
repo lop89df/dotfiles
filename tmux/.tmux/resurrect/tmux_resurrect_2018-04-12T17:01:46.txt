@@ -1,0 +1,17 @@
+pane	AR	0	:..enderer/build	1	:*Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/build	0	zsh	:
+pane	AR	0	:..enderer/build	1	:*Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	1	vim	:vim lib_paraview/src/ParaviewScript.cpp
+pane	AR	1	:..erence/static	0	:-	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs	0	vim	:vim
+pane	AR	1	:..erence/static	0	:-	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/phase_interference/static	1	zsh	:
+pane	AR	2	:..stic_renderer	0	:	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	1	zsh	:
+pane	AR	2	:..stic_renderer	0	:	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	vim	:vim lib_model/src/Model.cpp
+pane	AR	2	:..stic_renderer	0	:	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/debug_runs	0	vim	:vim modelconfig_dragonfly.xml
+pane	SDK	0	:.._ultrahaptics	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	0	zsh	:
+pane	SDK	0	:.._ultrahaptics	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	1	vim	:vim
+pane	config	0	:vim	1	:*	0	:/Users/joe.spilmanATultrahaptics.com	0	zsh	:
+pane	config	0	:vim	1	:*	1	:/Users/joe.spilmanATultrahaptics.com	1	vim	:vim
+window	AR	0	1	:*Z	17db,356x80,0,0{150x80,0,0,14,205x80,151,0,16}
+window	AR	1	0	:-	8884,356x80,0,0[356x45,0,0,15,356x34,0,46,17]
+window	AR	2	0	:	4d6c,356x80,0,0{178x80,0,0,24,177x80,179,0[177x40,179,0,30,177x39,179,41,31]}
+window	SDK	0	1	:*	c4da,356x80,0,0{178x80,0,0,6,177x80,179,0,0}
+window	config	0	1	:*	1e21,356x80,0,0{161x80,0,0,20,194x80,162,0,21}
+state	AR	config

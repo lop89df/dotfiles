@@ -1,5 +1,7 @@
 filetype off                  " required
 
+""" Vundle & Plugins
+"
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -35,20 +37,15 @@ if !has('win32unix')
 	Plugin 'Valloric/YouCompleteMe'
 endif
 
+Plugin 'urbainvaes/vim-tmux-pilot'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+""" Plugin Options
 
 if !has('win32unix')
 
@@ -86,7 +83,12 @@ set number
 set splitright
 set splitbelow
 
+""" Menus & Sessions
+
 set noswapfile
+
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir
 
 set backspace=indent,eol,start
 
@@ -102,5 +104,3 @@ set listchars+=extends:❯,precedes:❮
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
-
-filetype plugin indent on

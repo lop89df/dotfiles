@@ -1,0 +1,35 @@
+pane	AR	0	:develop	0	:Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/build/AR_Python	0	zsh	:vim modelconfig_dragonfly.xml
+vim ar_python_test.py
+pane	AR	0	:develop	0	:Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	git	:git diff
+pane	AR	0	:develop	0	:Z	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	1	vim	:vim
+pane	AR	1	:examples	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/cover_material_simulations/Control	0	zsh	:
+pane	AR	1	:examples	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/phase_directivity	0	zsh	:
+pane	AR	1	:examples	1	:*	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/phase_directivity	1	vim	:vim Murata_directivity_0_5_degree.csv
+pane	AR	2	:debug	0	:	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	vim	:vim modelconfig_dragonfly_interaction_zones.xml
+pane	AR	2	:debug	0	:	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/debug_runs	1	zsh	:vim modelconfig_dragonfly.xml
+pane	AR	3	:robot	0	:	0	:/Users/joe.spilmanATultrahaptics.com/robot_data/inspire_focal	0	vim	:vim rearange_data.py
+pane	AR	3	:robot	0	:	1	:/Users/joe.spilmanATultrahaptics.com/Downloads	1	zsh	:
+pane	AR	4	:build	0	:-Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/build	1	zsh	:
+pane	AR	4	:build	0	:-Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	0	vim	:vim CMakeLists.txt
+pane	DFU	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_dfu/build	0	zsh	:
+pane	DFU	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_dfu	0	zsh	:
+pane	DFU	0	:editor	1	:*	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_dfu	1	vim	:vim -S Session.vim
+pane	SDK	0	:editor	1	:*Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	0	zsh	:
+pane	SDK	0	:editor	1	:*Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	1	vim	:vim
+pane	SDK	1	:haptics	0	:-Z	0	:/Users/joe.spilmanATultrahaptics.com/haptic_tests/build	1	zsh	:
+pane	SDK	1	:haptics	0	:-Z	1	:/Users/joe.spilmanATultrahaptics.com/haptic_tests	0	vim	:vim TimePointStreaming_Dynamic_Const_Freq.cpp
+pane	config	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/.dotfiles	1	zsh	:
+pane	config	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com	0	vim	:vim /Users/joe.spilmanATultrahaptics.com/.vimrc
+pane	monome	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/monome/juceserial	0	zsh	:
+pane	monome	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/monome/juceserial	1	vim	:vim CMakeLists.txt
+window	AR	0	0	:Z	5db0,277x76,0,0{131x76,0,0[131x38,0,0,5,131x37,0,39,20],145x76,132,0,7}
+window	AR	1	1	:*	52f4,277x76,0,0{122x76,0,0[122x40,0,0,6,122x35,0,41,26],154x76,123,0,8}
+window	AR	2	0	:	e38f,277x76,0,0[277x44,0,0,14,277x31,0,45,15]
+window	AR	3	0	:	50d8,277x76,0,0{139x76,0,0,18,137x76,140,0,17}
+window	AR	4	0	:-Z	d0d2,277x76,0,0{139x76,0,0,21,137x76,140,0,22}
+window	DFU	0	1	:*	e544,278x76,0,0{138x76,0,0[138x38,0,0,9,138x37,0,39,10],139x76,139,0,11}
+window	SDK	0	1	:*Z	3d3b,185x57,0,0{103x57,0,0,0,81x57,104,0,1}
+window	SDK	1	0	:-Z	1b2a,185x57,0,0{92x57,0,0,2,92x57,93,0,4}
+window	config	0	1	:*	57d3,277x76,0,0{141x76,0,0,12,135x76,142,0,13}
+window	monome	0	1	:*	f2bc,277x76,0,0{138x76,0,0,24,138x76,139,0,23}
+state	AR	monome

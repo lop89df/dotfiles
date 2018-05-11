@@ -1,0 +1,20 @@
+pane	AR	0	:editor	0	:-Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer/build	0	zsh	:vim /usr/local/lib/cmake/Qt5Core/Qt5CoreConfig.cmake
+pane	AR	0	:editor	0	:-Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer	1	vim	:vim -S Session.vim
+pane	AR	1	:examples	1	:*Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/DF_USI_COMP	0	zsh	:
+pane	AR	1	:examples	1	:*Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/acoustics/acoustic_renderer_examples/modelconfigs/DF_USI_COMP	1	vim	:vim modelconfig_USI.xml
+pane	DFU	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_dfu/build	0	zsh	:
+pane	DFU	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_dfu	1	zsh	:
+pane	DFU	0	:editor	1	:*	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_dfu	0	vim	:vim -S Session.vim
+pane	SDK	0	:editor	0	:-Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	0	zsh	:
+pane	SDK	0	:editor	0	:-Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	1	vim	:vim daemon/UH_Daemon.cpp
+pane	SDK	1	:review	1	:*Z	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	0	zsh	:
+pane	SDK	1	:review	1	:*Z	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	1	vim	:vim lib_common/test/normal/maths/Matrix3x3.test.cpp
+pane	config	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/.dotfiles/tmux	0	zsh	:
+pane	config	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com	1	vim	:vim
+window	AR	0	0	:-Z	d5c5,277x76,0,0{131x76,0,0,10,145x76,132,0,12}
+window	AR	1	1	:*Z	d3bc,277x76,0,0{121x76,0,0,17,155x76,122,0,11}
+window	DFU	0	1	:*	c9cb,277x76,0,0{138x76,0,0[138x38,0,0,7,138x37,0,39,13],138x76,139,0,6}
+window	SDK	0	0	:-Z	e931,277x76,0,0{149x76,0,0,0,127x76,150,0,5}
+window	SDK	1	1	:*Z	b2bd,277x76,0,0{138x76,0,0,19,138x76,139,0,20}
+window	config	0	1	:*	798c,277x76,0,0{142x76,0,0,3,134x76,143,0,4}
+state	AR	DFU
