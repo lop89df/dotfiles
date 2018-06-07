@@ -1,5 +1,0 @@
-pane	SDK	0	:editor	1	:*	0	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	0	zsh	:
-pane	SDK	0	:editor	1	:*	1	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	1	zsh	:
-pane	SDK	0	:editor	1	:*	2	:/Users/joe.spilmanATultrahaptics.com/ultrahaptics/sw_ultrahaptics	0	vim	:vim
-window	SDK	0	1	:*	08bf,356x80,0,0{189x80,0,0[189x40,0,0,0,189x39,0,41,2],166x80,190,0,1}
-state	SDK	

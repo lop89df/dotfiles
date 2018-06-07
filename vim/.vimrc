@@ -54,7 +54,7 @@ if !has('win32unix')
 	let g:ycm_global_ycm_extra_conf = expand('$HOME/.vim/ycm_extra_conf.py')
 	let g:ycm_extra_conf_vim_data = ['getcwd()']
 	let g:ycm_add_preview_to_completeopt = 1
-	let g:ycm_autoclose_preview_window_after_insertion = 1  
+	let g:ycm_autoclose_preview_window_after_insertion = 1
 	let g:ycm_always_populate_location_list = 1
 
 	nnoremap ,gl :YcmCompleter GoToDeclaration<CR>
@@ -96,11 +96,34 @@ set mouse=a
 
 set wildmenu
 
-set wildmode=longest:full,full 
+set wildmode=longest:full,full
 
-set list                        " show chars defined in 'listchars' 
+""" Whitespace
+
+set list                        " show chars defined in 'listchars'
 set listchars=tab:❭\            " list of strings used for list mode
 set listchars+=extends:❯,precedes:❮
 
+augroup trailing
+	au!
+	au InsertEnter * set listchars-=trail:·
+	au InsertLeave * set listchars+=trail:·
+augroup END
+
+""" Key Bindings
+
+map <F2> :redraw!<CR>
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+""" Diff current buffer
+
+function! s:DiffWithSaved()
+	let filetype=&ft
+	diffthis
+	vnew | r # | normal! 1Gdd
+	diffthis
+	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
