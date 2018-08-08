@@ -87,3 +87,5 @@ done
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+export CMAKE_PREFIX_PATH=/usr/local/opt/qt5
