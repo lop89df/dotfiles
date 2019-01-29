@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 filetype off                  " required
 
 """ Vundle & Plugins
@@ -25,7 +28,7 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'tpope/vim-repeat'
 
-Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-eunuch'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
@@ -41,7 +44,7 @@ Plugin 'Julian/vim-textobj-variable-segment'
 
 Plugin 'sgur/vim-textobj-parameter'
 
-Plugin 'flazz/vim-colorschemes'
+Plugin 'morhetz/gruvbox'
 
 Plugin 'urbainvaes/vim-tmux-pilot'
 
@@ -55,11 +58,17 @@ Plugin 'Shougo/unite.vim'
 
 Plugin 'Shougo/vimproc.vim'
 
+Plugin 'thinca/vim-qfreplace'
+
+Plugin 'tpope/vim-liquid'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+let mapleader = "\<Space>"
 
 """ Plugin Options
 
@@ -77,9 +86,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline_theme='luna'
-
 """ Unite
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 noremap <leader>f :<C-u>Unite -start-insert file_rec/async<CR>
 noremap <leader>b :<C-u>Unite -start-insert buffer<CR>
@@ -103,8 +112,26 @@ nnoremap <silent> <leader>s :<C-u>Unite file_rec/async:.::<C-R><C-w><CR>
 nnoremap <silent> <leader>s :<C-u>Unite grep:.::<C-R><C-w><CR>
 command! -nargs=1 Ag Unite grep:.::<args>
 
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit -v<CR>
+nnoremap <silent> <leader>ga :Gwrite<cr>
+nnoremap <silent> <leader>gb :Gblame<cr>
+
+" unite-menu {{{3
+let g:unite_source_menu_menus = {}
+let g:unite_source_menu_menus.fugitive = { 'description' : 'fugitive menu'}
+let g:unite_source_menu_menus.fugitive.command_candidates = {
+            \ 'Gstatus <Leader>gs' : 'Gstatus',
+            \ 'Gcommit -v <Leader>gc' : 'Gcommit -v',
+            \ 'Glog' : 'Glog',
+            \}
+
+nnoremap <silent> <leader>gg :<C-u>Unite menu:fugitive<CR>
+
 call unite#custom#profile('default', 'context', {
-\ 'start_insert' : 1,
+\ 'start_profile' : 20,
+\ 'winheight' : 20,
 \ 'direction' : 'botright',
 \ })
 
@@ -162,6 +189,8 @@ map <F2> :redraw!<CR>
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+nnoremap <leader><Space> za
 
 """ Diff current buffer
 

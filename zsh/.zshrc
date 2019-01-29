@@ -59,6 +59,9 @@ for config_file (~/.zsh/*.zsh); do
   source $config_file
 done
 
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -88,4 +91,4 @@ done
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-export CMAKE_PREFIX_PATH=/usr/local/opt/qt5
+export PATH="/Users/joe.spilmanATultrahaptics.com/anaconda3/bin:$PATH"
