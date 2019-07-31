@@ -30,8 +30,6 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'tpope/vim-eunuch'
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'vim-scripts/ReplaceWithRegister'
@@ -44,7 +42,7 @@ Plugin 'Julian/vim-textobj-variable-segment'
 
 Plugin 'sgur/vim-textobj-parameter'
 
-Plugin 'morhetz/gruvbox'
+Plugin 'flazz/vim-colorschemes'
 
 Plugin 'urbainvaes/vim-tmux-pilot'
 
@@ -62,6 +60,10 @@ Plugin 'thinca/vim-qfreplace'
 
 Plugin 'tpope/vim-liquid'
 
+Plugin 'LucHermitte/lh-vim-lib'
+
+Plugin 'LucHermitte/local_vimrc'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -70,11 +72,9 @@ filetype plugin indent on    " required
 
 let mapleader = "\<Space>"
 
+set clipboard=unnamed
+
 """ Plugin Options
-
-""" NERDTree
-
-let g:NERDTreeWinPos = "right"
 
 """ Airline
 
@@ -85,6 +85,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:airline_theme='deus'
 
 """ Unite
 

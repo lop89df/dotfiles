@@ -15,4 +15,6 @@
 [pull]
 	rebase = true
 [core]
-	excludesfile = /Users/joe.spilmanATultrahaptics.com/.gitignore_global
+	excludesfile = ~/.gitignore_global
+
+	editor = vim

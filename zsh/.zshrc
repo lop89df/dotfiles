@@ -91,4 +91,3 @@ zmodload -i zsh/complist
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-export PATH="/Users/joe.spilmanATultrahaptics.com/anaconda3/bin:$PATH"
