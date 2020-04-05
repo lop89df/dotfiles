@@ -64,6 +64,8 @@ Plugin 'LucHermitte/lh-vim-lib'
 
 Plugin 'LucHermitte/local_vimrc'
 
+Plugin 'vim-latex/vim-latex'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -74,7 +76,8 @@ let mapleader = "\<Space>"
 
 set clipboard=unnamed
 
-""" Plugin Options
+" Plugin Options
+"============================================================================"
 
 """ Airline
 
@@ -87,6 +90,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:airline_theme='deus'
+
+"============================================================================"
 
 """ Unite
 
@@ -137,11 +142,56 @@ call unite#custom#profile('default', 'context', {
 \ 'direction' : 'botright',
 \ })
 
+"============================================================================"
+
+""" Vim Latex-Suite
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='lualatex'
+
+let g:Tex_DefaultTargetFormat='pdf'
+
+"============================================================================"
+
+""" edit configs  {{{2
+function! EditConfig(what, ext = '.vim')
+    let l:dir = split(&runtimepath,',')[0]
+    if a:what == 'vimrc'
+        let l:file = expand($MYVIMRC)
+    elseif ! isdirectory(globpath(l:dir, a:what))
+        echoe a:what." is not valid!"
+    elseif empty(&filetype)
+        echoe 'filetype is empty!'
+    else
+        let l:file = l:dir.'/'.a:what.'/'.&filetype.a:ext
+    endif
+
+    execute ':vsplit '.file
+    execute ':lcd %:p:h'
+endf
+nmap <leader>ev :call EditConfig('vimrc')<CR>
+nmap <leader>ef :call EditConfig('ftplugin')<CR>
+
+"============================================================================"
+
 """ Colour-Schemes & Visual Settings
 
 set fillchars=diff:⣿
 
 set background=dark
+
+augroup my_colours
+  autocmd!
+  autocmd ColorScheme gruvbox hi SpellBad cterm=reverse
+augroup END
 
 colorscheme gruvbox
 

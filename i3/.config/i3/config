@@ -186,6 +186,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 	font pango:DejaVu Sans Mono, Awesome 9
+
+	colors {
+	  background #252423
+	  statusline #ffd7af
+
+	  focused_workspace #83a598 #83a598 #252423
+	  active_workspace #83a598 #83a598 #252423
+	  urgent_workspace #ff5500 #ea4633 #ffd7af
+	}
 }
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
