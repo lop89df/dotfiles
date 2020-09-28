@@ -4,10 +4,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+export EDITOR=/usr/bin/vim
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="simple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -64,6 +66,10 @@ zmodload -i zsh/complist
 
 # User configuration
 
+if [ -d ~/.texmf ] ; then
+	export TEXMFHOME=~/.texmf
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -91,3 +97,6 @@ zmodload -i zsh/complist
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+export PATH="/home/joe/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+

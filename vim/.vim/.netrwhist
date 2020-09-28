@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/joe/cpp_template'
+let g:netrw_dirhist_3='/home/joe/Masters/FreeRTOS'
+let g:netrw_dirhist_2='/home/joe/Masters/Project/RTOS_Projects/mAbassi_CortexA9_DS5_Demos/Drivers/src'
+let g:netrw_dirhist_1='/usr/share/zoneinfo/Europe'
+let g:netrw_dirhist_0='/usr/share/zoneinfo'
+let g:netrw_dirhist_9='/home/joe/Masters/Project/RTOS_Projects/mAbassi_CortexA9_DS5_Demos/mCortexA9_DS5/src'
+let g:netrw_dirhist_8='/home/joe/Masters/Project/RTOS_Projects/mAbassi_CortexA9_DS5_Demos/mCortexA9_DS5'
+let g:netrw_dirhist_7='/home/joe/Masters/Project/RTOS_Projects/mAbassi_CortexA9_DS5_Demos'
+let g:netrw_dirhist_6='/home/joe/Downloads/mCortexA9_DS5_1.37.41.41.27.22.24/mCortexA9_DS5/Workspace/Demo_10_AR10_A9_GCC'
+let g:netrw_dirhist_5='/home/joe/Downloads/mCortexA9_DS5_1.37.41.41.27.22.24/mCortexA9_DS5/Workspace'

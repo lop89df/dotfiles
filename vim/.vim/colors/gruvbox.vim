@@ -1,0 +1,1 @@
+/home/joe/.vim/bundle/gruvbox/colors/gruvbox.vim

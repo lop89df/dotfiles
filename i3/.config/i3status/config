@@ -8,7 +8,7 @@
 
 general {
         colors = true
-	color_good =  "#87d787"
+	color_good =  "#b8bb26"
 	color_degraded = "#ffaf00"
 	color_bad = "#fb4934"
         interval = 5
@@ -55,16 +55,17 @@ disk "/" {
 }
 
 load {
-        format = " %1min"
+        format = " %1min:%5min"
 }
 
 memory {
-        format = " %used | %available"
+        format = " %used|%available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
         format = " %m-%d  %H:%M"
+	timezone = "Europe/London"
 }
 

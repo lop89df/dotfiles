@@ -44,8 +44,6 @@ Plugin 'sgur/vim-textobj-parameter'
 
 Plugin 'flazz/vim-colorschemes'
 
-Plugin 'urbainvaes/vim-tmux-pilot'
-
 Plugin 'ericcurtin/CurtineIncSw.vim'
 
 Plugin 'sjl/gundo.vim'
@@ -66,11 +64,17 @@ Plugin 'LucHermitte/local_vimrc'
 
 Plugin 'vim-latex/vim-latex'
 
+Plugin 'morhetz/gruvbox'
+
+Plugin 'urbainvaes/vim-tmux-pilot'
+
+Plugin 'tidalcycles/vim-tidal'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+
+let $VIM = $HOME."/.vim"
 
 let mapleader = "\<Space>"
 
@@ -89,7 +93,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline_theme='deus'
+let g:airline_theme='gruvbox'
 
 "============================================================================"
 
@@ -166,6 +170,16 @@ function! EditConfig(what, ext = '.vim')
     let l:dir = split(&runtimepath,',')[0]
     if a:what == 'vimrc'
         let l:file = expand($MYVIMRC)
+    elseif a:what == 'texrc'
+        let l:file = expand($VIM).'/ftplugin/tex/texrc'
+    elseif a:what == 'i3'
+	let l:file = expand($HOME).'/.config/i3/config'
+    elseif a:what == 'rifle'
+	let l:file = expand($HOME).'/.config/ranger/rifle.conf'
+    elseif a:what == 'zshrc'
+	let l:file = expand($HOME).'/.zshrc'
+    elseif a:what == 'i3status'
+	let l:file = expand($HOME).'/.config/i3status/config'
     elseif ! isdirectory(globpath(l:dir, a:what))
         echoe a:what." is not valid!"
     elseif empty(&filetype)
@@ -179,6 +193,13 @@ function! EditConfig(what, ext = '.vim')
 endf
 nmap <leader>ev :call EditConfig('vimrc')<CR>
 nmap <leader>ef :call EditConfig('ftplugin')<CR>
+nmap <leader>et :call EditConfig('texrc')<CR>
+nmap <leader>ei :call EditConfig('i3')<CR>
+nmap <leader>es :call EditConfig('i3status')<CR>
+nmap <leader>ez :call EditConfig('zshrc')<CR>
+nmap <leader>er :call EditConfig('rifle')<CR>
+
+nnoremap <leader>r :source $MYVIMRC<CR>
 
 "============================================================================"
 
@@ -197,11 +218,18 @@ colorscheme gruvbox
 
 syntax on
 
-noremap <C-N> :set invnumber<CR>
+noremap <C-N> :if (!&number && !&relativenumber)<CR>
+              \set number \| set relativenumber<CR>
+              \else <CR>
+              \set nonumber \| set norelativenumber<CR>
+              \endif<CR><CR>
+
 
 set colorcolumn=+1
 
 set nowrap
+
+set cursorline
 
 """ Window Arrangment
 
@@ -235,6 +263,10 @@ augroup trailing
 	au InsertLeave * set listchars+=trail:·
 augroup END
 
+""" Spelling
+
+set nospell
+
 """ Key Bindings
 
 map <F2> :redraw!<CR>
@@ -243,6 +275,19 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 
 nnoremap <leader><Space> za
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap Q ^
+nnoremap K $
+
+"
+" Sample command W
+" 
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 """ Diff current buffer
 
