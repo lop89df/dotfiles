@@ -100,3 +100,21 @@ fi
 
 export PATH="/home/joe/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
+# Parallel Wireless Environment Variables
+export FLEXRAN_3G=${HOME}/PW_Repositories
+export PICOSYSTEMS=${FLEXRAN_3G}/vru-3g-phy/verif
+export PICO_DIR_PC82XX=${FLEXRAN_3G}/vru-3g-phy/verif/systemtesttools
+export TCLLIBPATH=${FLEXRAN_3G}/vru-3g-phy/verif/systemtesttools/systemTest/tcltk
+export PATH=${PATH}:${FLEXRAN_3G}/vru-3g-phy/verif/systemtesttools/systemTest/tools/bin
+export PC8208FREQ=1950000
+
+export PATH=${PICO_DIR_PC82XX}/systemTest/tools/bin:${PATH}
+export PATH=${HOME}/.cargo/bin:${PATH}
+
+export RCT_VRU_SCRIPTS=${HOME}/PW_Repositories/vru-3g-phy/verif/systemtesttools/systemTest/performance/testScripts_vRU
+export TEST_CTRL_PATH=${HOME}/PW_Repositories/vru-3g-phy/submodules/vru-common-phy/TestController
+export TEST_CTRL_FRAMEWORK=${TEST_CTRL_PATH}/framework_modules
+export TEST_CTRL_PLUGINS=${TEST_CTRL_PATH}/vru_plugins
+export PYTHONPATH=${RCT_VRU_SCRIPTS}:${TEST_CTRL_PATH}:${TEST_CTRL_FRAMEWORK}:${TEST_CTRL_PLUGINS}
+
+export ABS_ROOT_3G=/home/automate/jenkins-nodes/workspace/vran-layer1-3g-rct

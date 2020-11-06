@@ -30,11 +30,11 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'tpope/vim-eunuch'
 
+Plugin 'gcmt/taboo.vim'
+
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'vim-scripts/ReplaceWithRegister'
-
-Plugin 'sjl/vitality.vim'
 
 Plugin 'kana/vim-textobj-user'
 
@@ -56,8 +56,6 @@ Plugin 'Shougo/vimproc.vim'
 
 Plugin 'thinca/vim-qfreplace'
 
-Plugin 'tpope/vim-liquid'
-
 Plugin 'LucHermitte/lh-vim-lib'
 
 Plugin 'LucHermitte/local_vimrc'
@@ -68,7 +66,9 @@ Plugin 'morhetz/gruvbox'
 
 Plugin 'urbainvaes/vim-tmux-pilot'
 
-Plugin 'tidalcycles/vim-tidal'
+Plugin 'preservim/nerdtree'
+
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,24 +80,44 @@ let mapleader = "\<Space>"
 
 set clipboard=unnamed
 
+"============================================================================"
 " Plugin Options
 "============================================================================"
 
+
+"============================================================================"
 """ Airline
+"============================================================================"
 
 " Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#enabled = 1
+"
+"" Show just the filename
+""let g:airline#extensions#tabline#fnamemod = ':t'
+"
+"let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:airline_theme='gruvbox'
 
+
+"============================================================================"
+""" Taboo
 "============================================================================"
 
+let g:taboo_tab_format = '[%N] %f | '
+let g:taboo_renamed_tab_format = '[%N] %l | '
+
+
+"============================================================================"
+""" NERDTree
+"============================================================================"
+
+let g:NERDTreeWinPos = "right"
+
+
+"============================================================================"
 """ Unite
+"============================================================================"
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
@@ -147,8 +167,8 @@ call unite#custom#profile('default', 'context', {
 \ })
 
 "============================================================================"
-
 """ Vim Latex-Suite
+"============================================================================"
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -163,9 +183,11 @@ let g:tex_flavor='lualatex'
 
 let g:Tex_DefaultTargetFormat='pdf'
 
+
+"============================================================================"
+""" edit configs  {{{2
 "============================================================================"
 
-""" edit configs  {{{2
 function! EditConfig(what, ext = '.vim')
     let l:dir = split(&runtimepath,',')[0]
     if a:what == 'vimrc'
@@ -201,9 +223,10 @@ nmap <leader>er :call EditConfig('rifle')<CR>
 
 nnoremap <leader>r :source $MYVIMRC<CR>
 
-"============================================================================"
 
+"============================================================================"
 """ Colour-Schemes & Visual Settings
+"============================================================================"
 
 set fillchars=diff:⣿
 
@@ -267,6 +290,10 @@ augroup END
 
 set nospell
 
+""" Modelines
+
+set modeline
+
 """ Key Bindings
 
 map <F2> :redraw!<CR>
@@ -283,6 +310,17 @@ nnoremap <C-l> <C-w>l
 
 nnoremap Q ^
 nnoremap K $
+
+nnoremap <C-t> :tabnew<CR>
+
+""" git log --all
+nmap <leader>gv :Gitv --all<CR>
+
+function! s:gTabDiff(branch)
+	tabedit %|Git diff string(a:branch)
+endf
+
+command! -nargs=1 GdiffInTab call s:gTabDiff(<f-args>)
 
 "
 " Sample command W

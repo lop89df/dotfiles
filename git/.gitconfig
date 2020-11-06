@@ -1,9 +1,11 @@
 [user]
 	name = Joe Spilman
-	email = joe.spilman@ultrahaptics.com
+	email = jspilman@parallelwireless.com
 [push]
 	default = current
 [alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
 	st = status
 	co = checkout
 	ci = commit -v
@@ -16,5 +18,18 @@
 	rebase = true
 [core]
 	excludesfile = ~/.gitignore_global
-
 	editor = vim
+	autocrlf = input
+	eol = native
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[log]
+	date = local
+[http]
+	sslVerify = false
+[url "ssh://git@git.parallelwireless.net:7999/"]
+	pushinsteadof = ssh://git@nhbsm01.parallelwireless.net:7999/
