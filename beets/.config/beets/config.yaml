@@ -1,0 +1,17 @@
+directory: /mnt
+library: ~/beetdb/musiclibrary.db
+
+import:
+  move: yes
+
+plugins: mpdupdate
+
+mpd:
+  host: 192.168.0.68
+  port: 6600
+
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    comp: Various Artists/$album%aunique{}/$track $title
+
+plugins: discogs
