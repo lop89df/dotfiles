@@ -7,11 +7,11 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-	color_good =  "#b8bb26"
-	color_degraded = "#ffaf00"
-	color_bad = "#fb4934"
-        interval = 5
+    colors = true
+    color_good =  "#b8bb26"
+    color_degraded = "#ffaf00"
+    color_bad = "#fb4934"
+    interval = 5
 }
 
 order += "volume master"
@@ -31,41 +31,39 @@ volume master {
 }
 
 wireless _first_ {
-        format_up = " (%quality at %essid) %ip"
-        format_down = " down"
+    format_up = " (%quality at %essid) %ip"
+    format_down = " down"
 }
 
-
-
 ethernet _first_ {
-        format_up = " %ip (%speed)"
-        format_down = " down"
+    format_up = " %ip (%speed)"
+    format_down = " down"
 }
 
 battery all {
-        format = "%status %percentage %remaining"
-	status_chr = ""
-	status_bat = ""
-        status_unk = "?"
-	status_full = ""
+    format = "%status %percentage %remaining"
+    status_chr = ""
+    status_bat = ""
+    status_unk = "?"
+    status_full = ""
 }
 
 disk "/" {
-        format = "🖴 %avail"
+    format = " %avail"
 }
 
 load {
-        format = " %1min:%5min"
+    format = " %1min:%5min"
 }
 
 memory {
-        format = " %used|%available"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+    format = " %used|%available"
+    threshold_degraded = "1G"
+    format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = " %m-%d  %H:%M"
-	timezone = "Europe/London"
+    format = " %m-%d  %H:%M"
+    timezone = "Europe/London"
 }
 

@@ -98,6 +98,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 export PATH="/home/joe/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
 # Parallel Wireless Environment Variables

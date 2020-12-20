@@ -62,7 +62,7 @@ Plugin 'LucHermitte/local_vimrc'
 
 Plugin 'vim-latex/vim-latex'
 
-Plugin 'morhetz/gruvbox'
+Plugin 'Dave-Elec/gruvbox'
 
 Plugin 'urbainvaes/vim-tmux-pilot'
 
@@ -230,17 +230,26 @@ nnoremap <leader>r :source $MYVIMRC<CR>
 
 set fillchars=diff:⣿
 
-set background=dark
+"""augroup my_colours
+"""  autocmd!
+"""  autocmd ColorScheme gruvbox hi SpellBad cterm=reverse
+"""augroup END
 
-augroup my_colours
-  autocmd!
-  autocmd ColorScheme gruvbox hi SpellBad cterm=reverse
-augroup END
+let g:gruvbox_vert_split='bg2'
+let g:gruvbox_transparent_bg = 1
 
 colorscheme gruvbox
 
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+""" Syntax highlighting on by default
 syntax on
 
+""" Relative line numbers on by default
+set number
+set relativenumber
+
+""" Toggle relative line numbers
 noremap <C-N> :if (!&number && !&relativenumber)<CR>
               \set number \| set relativenumber<CR>
               \else <CR>
@@ -250,32 +259,32 @@ noremap <C-N> :if (!&number && !&relativenumber)<CR>
 
 set colorcolumn=+1
 
+""" Don't wrap lines by default
 set nowrap
 
 set cursorline
 
 """ Window Arrangment
-
 set splitright
 set splitbelow
 
 """ Menus & Sessions
-
 set noswapfile
 
-set undofile " Maintain undo history between sessions
+""" Maintain undo history between sessions
+set undofile
 set undodir=~/.vim/undodir
 
 set backspace=indent,eol,start
 
+""" Allow visual selection with mouse
 set mouse=a
 
+""" Enable filepath suggestions + configure
 set wildmenu
-
 set wildmode=longest:full,full
 
 """ Whitespace
-
 set list                        " show chars defined in 'listchars'
 set listchars=tab:❭\            " list of strings used for list mode
 set listchars+=extends:❯,precedes:❮
