@@ -70,6 +70,10 @@ Plugin 'preservim/nerdtree'
 
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 
+Plugin 'godlygeek/tabular'
+
+Plugin 'plasticboy/vim-markdown'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -93,9 +97,13 @@ set clipboard=unnamed
 "let g:airline#extensions#tabline#enabled = 1
 "
 "" Show just the filename
-""let g:airline#extensions#tabline#fnamemod = ':t'
-"
-"let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:airline#extensions#tabline#buffer_nr_show = 0
+
+let g:airline#etensions#hunks#enabled = 0
+let g:airline#etensions#branch#enabled = 0
+
 
 let g:airline_theme='gruvbox'
 
@@ -192,8 +200,8 @@ function! EditConfig(what, ext = '.vim')
     let l:dir = split(&runtimepath,',')[0]
     if a:what == 'vimrc'
         let l:file = expand($MYVIMRC)
-    elseif a:what == 'texrc'
-        let l:file = expand($VIM).'/ftplugin/tex/texrc'
+    elseif a:what == 'tmux'
+        let l:file = expand($HOME).'/.tmux.conf'
     elseif a:what == 'i3'
 	let l:file = expand($HOME).'/.config/i3/config'
     elseif a:what == 'rifle'
@@ -210,12 +218,12 @@ function! EditConfig(what, ext = '.vim')
         let l:file = l:dir.'/'.a:what.'/'.&filetype.a:ext
     endif
 
-    execute ':vsplit '.file
+    execute ':e '.file
     execute ':lcd %:p:h'
 endf
 nmap <leader>ev :call EditConfig('vimrc')<CR>
 nmap <leader>ef :call EditConfig('ftplugin')<CR>
-nmap <leader>et :call EditConfig('texrc')<CR>
+nmap <leader>et :call EditConfig('tmux')<CR>
 nmap <leader>ei :call EditConfig('i3')<CR>
 nmap <leader>es :call EditConfig('i3status')<CR>
 nmap <leader>ez :call EditConfig('zshrc')<CR>
@@ -236,7 +244,9 @@ set fillchars=diff:⣿
 """augroup END
 
 let g:gruvbox_vert_split='bg2'
-let g:gruvbox_transparent_bg = 1
+"""let g:gruvbox_transparent_bg = 1
+
+set background=dark
 
 colorscheme gruvbox
 
