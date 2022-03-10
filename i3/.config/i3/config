@@ -37,25 +37,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Applications to run on startup
 exec --no-startup-id i3-msg 'workspace 1; exec urxvt'
-exec --no-startup-id i3-msg 'workspace 2; exec chromium'
-exec --no-startup-id i3-msg 'exec redshift'
-
-# redshift modes
-bindsym $mod+p mode "$mode_redshift"
-set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
-set $kill_redshift pkill -9 redshift;
-mode "$mode_redshift" {
-    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
-    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
-    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
-    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
-    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
-    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
-
-    # exit mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -212,9 +193,10 @@ bindsym $mod+r mode "resize"
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock -c 282828, mode "default"
-    bindsym e exec --no-startup-id logout, mode "default"
+    bindsym e exec --no-startup-id i3 exit, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym r exec --no-startup-id reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id shutdown -h now, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"

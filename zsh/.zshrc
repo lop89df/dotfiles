@@ -6,6 +6,8 @@ export ZSH=~/.oh-my-zsh
 
 export EDITOR=/usr/bin/vim
 
+TERM=xterm-256color
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -98,25 +100,51 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 export PATH="/home/joe/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
-# Parallel Wireless Environment Variables
-export FLEXRAN_3G=${HOME}/PW_Repositories
-export PICOSYSTEMS=${FLEXRAN_3G}/vru-3g-phy/verif
-export PICO_DIR_PC82XX=${FLEXRAN_3G}/vru-3g-phy/verif/systemtesttools
-export TCLLIBPATH=${FLEXRAN_3G}/vru-3g-phy/verif/systemtesttools/systemTest/tcltk
-export PATH=${PATH}:${FLEXRAN_3G}/vru-3g-phy/verif/systemtesttools/systemTest/tools/bin
-export PC8208FREQ=1950000
-
-export PATH=${PICO_DIR_PC82XX}/systemTest/tools/bin:${PATH}
 export PATH=${HOME}/.cargo/bin:${PATH}
 
-export RCT_VRU_SCRIPTS=${HOME}/PW_Repositories/vru-3g-phy/verif/systemtesttools/systemTest/performance/testScripts_vRU
-export TEST_CTRL_PATH=${HOME}/PW_Repositories/vru-3g-phy/submodules/vru-common-phy/TestController
-export TEST_CTRL_FRAMEWORK=${TEST_CTRL_PATH}/framework_modules
-export TEST_CTRL_PLUGINS=${TEST_CTRL_PATH}/vru_plugins
-export PYTHONPATH=${RCT_VRU_SCRIPTS}:${TEST_CTRL_PATH}:${TEST_CTRL_FRAMEWORK}:${TEST_CTRL_PLUGINS}
+# Parallel Wireless Environment Variables
+local vru_3g_dir=${HOME}/PW_Repositories/vru-3g-phy
+local system_test_dir=${vru_3g_dir}/verif/systemtesttools/systemTest
 
-export ABS_ROOT_3G=/home/automate/jenkins-nodes/workspace/vran-layer1-3g-rct
+export PATH=${PATH}:${system_test_dir}/tools/bin
+
+local test_controller_path=${vru_3g_dir}/submodules/vru-common-phy/TestController
+local test_controller_framework=${test_controller_path}/framework_modules
+local test_controller_plugins=${test_controller_path}/vru_plugins
+local vru_tc_plugins=${system_test_dir}/tc_plugins
+local vru_tc_functional_scripts=${system_test_dir}/functional/testScripts_vRU
+
+export PYTHONPATH=${PYTHONPATH}:${test_controller_path}
+export PYTHONPATH=${PYTHONPATH}:${test_controller_framework}
+export PYTHONPATH=${PYTHONPATH}:${test_controller_plugins}
+export PYTHONPATH=${PYTHONPATH}:${vru_tc_plugins}
+export PYTHONPATH=${PYTHONPATH}:${vru_tc_functional_scripts}
+
+export ABS_ROOT_3G=/home/automate/jenkins-nodes/workspace/vran-layer1-3g-regression-sw/vru-3g-phy
+
+export TEST_PLAN=TEMP
+#export TEST_PLAN=SW
+
+# RCT Specific
+export ABS_ROOT_3G=/home/automate/jenkins-nodes/workspace/vran-layer1-3g-rct/vru-3g-phy/
+
+local vru_tc_performance_scripts=${system_test_dir}/performance/testScripts_vRU
+export PYTHONPATH=${PYTHONPATH}:${vru_tc_performance_scripts}
+
+export TCLLIBPATH=${HOME}/PW_Repositories/vru-3g-phy/verif/systemtesttools/systemTest/tcltk
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$vru_3g_dir///build-avx512-icc-RelWithDebInfo/submodules/vru-common-phy/libs/mlog/build/lib/:/opt/mpeak/vru-3g-phy///submodules/vru-common-phy/libs/mlog/build/lib/
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$vru_3g_dir/build-avx512-icc-RelWithDebInfo/submodules/vru-common-phy/libs/mlog/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$vru_3g_dir/build-avx512-icc-RelWithDebInfo/submodules/vru-common-phy/libs/mlog/build/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$vru_3g_dir/build-avx512-icc-RelWithDebInfo/submodules/vru-common-phy/libs/mlog/build/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$vru_3g_dir/submodules/vru-common-phy/libs/mlog/lib/
+

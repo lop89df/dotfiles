@@ -30,6 +30,8 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'tpope/vim-eunuch'
 
+Plugin 'tpope/vim-obsession'
+
 Plugin 'gcmt/taboo.vim'
 
 Plugin 'airblade/vim-gitgutter'
@@ -88,6 +90,7 @@ set clipboard=unnamed
 " Plugin Options
 "============================================================================"
 
+set sessionoptions+=globals
 
 "============================================================================"
 """ Airline
@@ -101,8 +104,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline#extensions#tabline#buffer_nr_show = 0
 
-let g:airline#etensions#hunks#enabled = 0
-let g:airline#etensions#branch#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#fileformat#enabled = 0
 
 
 let g:airline_theme='gruvbox'
@@ -151,8 +155,8 @@ nnoremap <silent> <leader>s :<C-u>Unite file_rec/async:.::<C-R><C-w><CR>
 nnoremap <silent> <leader>s :<C-u>Unite grep:.::<C-R><C-w><CR>
 command! -nargs=1 Ag Unite grep:.::<args>
 
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gs :Git<CR>
+nnoremap <silent> <leader>gd :Gdiffsplit<CR>
 nnoremap <silent> <leader>gc :Gcommit -v<CR>
 nnoremap <silent> <leader>ga :Gwrite<cr>
 nnoremap <silent> <leader>gb :Gblame<cr>
@@ -206,6 +210,8 @@ function! EditConfig(what, ext = '.vim')
 	let l:file = expand($HOME).'/.config/i3/config'
     elseif a:what == 'rifle'
 	let l:file = expand($HOME).'/.config/ranger/rifle.conf'
+    elseif a:what == 'bashrc'
+	let l:file = expand($HOME).'/.bashrc'
     elseif a:what == 'zshrc'
 	let l:file = expand($HOME).'/.zshrc'
     elseif a:what == 'i3status'
@@ -226,6 +232,7 @@ nmap <leader>ef :call EditConfig('ftplugin')<CR>
 nmap <leader>et :call EditConfig('tmux')<CR>
 nmap <leader>ei :call EditConfig('i3')<CR>
 nmap <leader>es :call EditConfig('i3status')<CR>
+nmap <leader>eb :call EditConfig('bashrc')<CR>
 nmap <leader>ez :call EditConfig('zshrc')<CR>
 nmap <leader>er :call EditConfig('rifle')<CR>
 
@@ -326,9 +333,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-nnoremap Q ^
-nnoremap K $
 
 nnoremap <C-t> :tabnew<CR>
 

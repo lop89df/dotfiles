@@ -7,7 +7,7 @@
 ! -----------------------------------------------------------------------------
 
 ! hard contrast: *background: #1d2021
-*background: #282828
+*background: #32302f
 ! soft contrast: *background: #32302f
 *foreground: #ebdbb2
 ! Black + DarkGrey
@@ -47,5 +47,4 @@ URxvt.letterSpace: -1
 
 URxvt.scrollBar: false
 
-URxvt.transparent: true
-URxvt.shading: 30
+URxvt.termName: xterm-256color
