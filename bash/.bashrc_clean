@@ -1,0 +1,11 @@
+
+export HOME=/home/jspilman
+
+vru_3g_dir=${HOME}/PW_Repositories/vru-3g-phy
+system_test_dir=${vru_3g_dir}/verif/systemtesttools/systemTest
+
+export PATH=${PATH}:${system_test_dir}/tools/bin
+
+export TCLLIBPATH=${HOME}/PW_Repositories/vru-3g-phy/verif/systemtesttools/systemTest/tcltk
+
+export DISPLAY=:0
