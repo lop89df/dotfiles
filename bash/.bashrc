@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+source /usr/share/bash-completion/completions/git
+
+alias ssh='TERM=xterm-256color ssh'
+
 alias ls='ls --color=auto'
 alias pcn='sudo pacman -Syu'
 

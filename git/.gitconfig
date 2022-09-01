@@ -12,6 +12,7 @@
 	br = branch
 	lg = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short
 	lga = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short --all
+	ri = rebase -i
 [branch]
 	autosetuprebase = always
 [pull]
@@ -21,6 +22,7 @@
 	editor = vim
 	autocrlf = input
 	eol = native
+	safecrlf = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
