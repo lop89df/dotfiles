@@ -37,9 +37,5 @@ fi
 setxkbmap -layout gb -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
 
-VBoxClient --clipboard
-VBoxClient --draganddrop
-
-#exec /usr/bin/awesome
 exec i3
 

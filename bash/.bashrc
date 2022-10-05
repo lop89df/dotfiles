@@ -7,6 +7,8 @@
 
 source /usr/share/bash-completion/completions/git
 
+export TERM=xterm-256color
+
 alias ssh='TERM=xterm-256color ssh'
 
 alias ls='ls --color=auto'

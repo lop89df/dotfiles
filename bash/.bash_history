@@ -1,412 +1,3 @@
-ls
-vim phyi
-git co -
-gsu
-git st
-git fetch
-git fetch origin develop:develop
-rsync -ogazP --exclude="*/.git/*" --rsync-path="sudo rsync" /home/jspilman/PW_Repositories/vru-3g-phy 10.64.0.11:/home/jspilman
-ls ..
-ls -lrt ..
-ssh jspilman@moonlander
-ping moonlander
-ssh 10.10.40.20
-cd ../..
-scp -Cr 10.10.40.20:/home/hjadhav/DirectUswitch/7Jan22 .
-ls
-cd 7Jan22
-ls
-scp 10.64.0.11:/home/jspilman/Hemant_Logs/7Jan22/phydiags_105320/fapiUsrPlane_105320.txt .
-cd verif/systemtesttools/systemTest/tools/misc
-ls
-python3 extractRLC.py
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt > Hemant_105320_RLC_Out.txt
-q
-cd verif/systemtesttools/systemTest/tools/misc
-ls
-pwd
-xrandr --output VGA-1 --mode 1920x1080
-ssh 10.64.0.11
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt > Hemant_105320_RLC_Out.txt
-xrandr --output VGA-1 --mode 1920x1200
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt > Hemant_105320_RLC_Out.txt
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt > Hemant_105320_RLC_Out.txt
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt
-python3 extractRLC.py -r Hemant_105320_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320.txt > Hemant_105320_RLC_Out.txt
-git st
-gsii
-git co develop
-git pull
-gsu
-git st
-gaa
-git co -b bugfix/jspilman/UD-60124_Increase_Test_Results_Packaging_Timeout
-gaa
-git ci
-git push -u origin
-git fetch -p
-git lga
-git st
-git co -
-git co private/jspilman/RLC_Decorder_Script_Improvements
-gri develop
-gsp
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-ssh 10.64.0.11
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-xrandr --output VGA-1 --mode 1920x1200
-vim -S .vim/sessions/hemant_logs.session
-vim
-vim -S .vim/sessions/hemant_logs.session
-git st
-gsii
-git co bugfix/jspilman/UD-60124_Increase_Test_Results_Packaging_Timeout
-git fetch -p
-gri develop
-git fetch origin develop:develop
-gri develop
-git st
-gfp
-git fetch
-git co -
-git fetch -p
-git branch -D bugfix/jspilman/UD-60124_Increase_Test_Results_Packaging_Timeout
-git fetch origin develop:develop
-gri develop
-gfp
-git st
-gsp
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-cd verif/systemtesttools/systemTest/tools/misc
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-cd verif/systemtesttools/systemTest/tools/misc
-cd -
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-cd verif/systemtesttools/systemTest/tools/misc
-python3 extractRLC.py -r Hemant_105320_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/7Jan22/fapiUsrPlane_105320_Trunc.txt > Hemant_105320_Trunc_RLC_Out.txt
-ssh 10.64.0.11
-cd ~/Documents/Error_Logs/Hemant_Logs
-ls
-scp -rC 10.10.40.20:/home/hjadhav/DirectUswitch/12Jan2022 .
-scp -C 10.64.0.11:/home/jspilman/vru-3g-phy/build-avx512-icc-RelWithDebInfo/apps/diagdecodeapp/fapiUsrPlane_101455.txt 12Jan2022/
-python3 extractRLC.py -r Hemant_101455_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455.txt > Hemant_101455_RLC_Out.txt
-python3 extractRLC.py -r Hemant_101455_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt > Hemant_101455_Trunc_RLC_Out.txt
-python3 extractRLC.py -r Hemant_101455_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-python3 extractRLC.py -r Hemant_101455_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt > Hemant_101455_Trunc_RLC_Out.txt
-python3 extractRLC.py -r Hemant_101455_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-python3 extractRLC.py -r Hemant_101455_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt > Hemant_101455_Trunc_RLC_Out.txt
-cd verif/systemtesttools/systemTest/tools/misc
-python3 extractRLC.py -r Hemant_101455_Trunc_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt > Hemant_101455_Trunc_RLC_Out.txt
-cd ~/
-git clone https://github.com/mitshell/CryptoMobile.git
-cd CryptoMobile
-ls
-cd ..
-rm -rf CryptoMobile
-git clone https://github.com/P1sec/CryptoMobile.git
-cd CryptoMobile
-python setup.py install
-sudo python3 setup.py install
-git st
-git diff
-git add extractRLC.py
-git ci
-ag kasumi_f8
-cd -
-cd PW_Repositories/vru-3g-phy
-git st
-git fetch
-git fetch origin develop:develop
-git fetch -p
-gsii
-gri develop
-gfp
-xrandr --output VGA-1 --mode 1920x1200
-vim -S .vim/sessions/hemant_logs.session
-cd ~/PW_Repositories/vru-3g-phy
-git st
-gsp
-cd verif
-cd verif/systemtesttools/systemTest/tools/misc
-cd ../verif/systemtesttools/systemTest/tools/misc
-python3 extractRLC.py -r test_rrc.txt ~/Documents/Error_Logs/RLC_FapiUpLogs/working_fapiUsrPlane.txt > test_RLC.txt
-vim test_RLC.txt
-python3 extractRLC.py -r test_rrc.txt ~/Documents/Error_Logs/RLC_FapiUpLogs/working_fapiUsrPlane.txt > test_RLC.txt
-python3 extractRLC.py -r test_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-python3 extractRLC.py -r test_rrc.txt ~/Documents/Error_Logs/RLC_FapiUpLogs/working_fapiUsrPlane.txt
-git st
-git fetch -p
-git fetch origin develop:develop
-gsii
-gri develop
-gsp
-u
-gsu
-python3 extractRLC.py -r test_rrc.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-python3 extractRLC.py -r test_rrc.txt ~/Documents/Error_Logs/RLC_FapiUpLogs/working_fapiUsrPlane.txt > test_RLC.txt
-gsii
-gri develop
-git fetch
-git st
-gsp
-git add extractRLC.py
-git ci --amend
-gfp
-git fetch
-git st
-git fetch
-gri develop
-git lga
-git co develop
-git fetch -p
-git pull
-git branch -D private/jspilman/RLC_Decorder_Script_Improvements
-git st
-gsii
-git st
-cd ~/PW_Repositories/vru-3g-phy
-ssh 10.64.0.11
-git st
-rsync -ogazP --exclude="*/.git/*" --rsync-path="sudo rsync" /home/jspilman/PW_Repositories/vru-3g-phy 10.64.0.11:/home/jspilman
-ssh 10.64.0.11
-cd ~/PW_Repositories/vru-3g-phy
-rsync -ogazP --exclude="*/.git/*" --rsync-path="sudo rsync" /home/jspilman/PW_Repositories/vru-3g-phy 10.64.0.11:/home/jspilman
-git st
-rsync -ogazP --exclude="*/.git/*" --rsync-path="sudo rsync" /home/jspilman/PW_Repositories/vru-3g-phy 10.64.0.11:/home/jspilman
-ssh 10.64.0.11
-rsync -ogazP --exclude="*/.git/*" --rsync-path="sudo rsync" /home/jspilman/PW_Repositories/vru-3g-phy 10.64.0.11:/home/jspilman
-ssh 10.64.0.11
-cd PW_Repositories/vru-3g-phy
-cd verif/systemtesttools/systemTest/tools/misc
-scp 10.64.0.11:/home/jspilman/vru-3g-phy/build-avx512-icc-RelWithDebInfo/apps/diagdecodeapp/fapiUsrPlane_101455.txt
-scp 10.64.0.11:/home/jspilman/vru-3g-phy/build-avx512-icc-RelWithDebInfo/apps/diagdecodeapp/fapiUsrPlane_101455.txt .
-python3 extractRLC.py -r script_test_RRC.txt fapiUsrPlane_101455.txt > script_test_RLC.txt
-python3 extractRLC.py -r script_test_RRC.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455.txt > script_test_RLC.txt
-python3 extractRLC.py -r script_test_RRC.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455.txt
-git st
-gss
-git st
-cd PW_Repositories/vru-3g-phy
-cd verif/systemtesttools/systemTest/tools/misc
-python3 extractRLC.py -r script_test_RRC.txt -p test_output.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455.txt
-vim test_output.txt
-python3 extractRLC.py -r script_test_RRC.txt -p test_output.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-vim test_output.txt
-python3 extractRLC.py -r script_test_RRC.txt -p test_output.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-vim fapiUsrPlane_101455.txt
-vim test_output.txt
-python3 extractRLC.py -r script_test_RRC.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-git diff
-git st
-git add extractRLC.py
-git co -b private/jspilman/RLC_Decode_Wrapper
-git ci
-git push -u origin
-gsp
-python3 extractRLC.py -r script_test_RRC.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-python3 extractRLC.py -r script_test_RRC.txt -p test_output.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-vim script_test_RRC.txt
-python3 extractRLC.py -r script_test_RRC.txt -p test_output.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-vim script_test_RRC.txt
-python3 extractRLC.py -r script_test_RRC.txt -p test_output.txt ~/Documents/Error_Logs/Hemant_Logs/12Jan2022/fapiUsrPlane_101455_Trunc.txt
-vim script_test_RRC.txt
-rsync -ogazP --exclude="*/.git/*" --rsync-path="sudo rsync" /home/jspilman/PW_Repositories/vru-3g-phy 10.64.0.11:/home/jspilman
-ssh 10.64.0.11
-ssh 10.64.1.40
-xrandr --output VGA-1 --mode 1920x1080
-ssh -f -N 10.14.4.5 -L 8124:10.64.2.4:5900
-ssh 10.64.0.11
-ssh -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh -N 10.14.4.5 -L 8117:10.64.1.17:5901
-ssh -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh 10.64.0.11
-ssh 10.64.0.96
-minicom
-sudo pacman -S minicom
-minicom -S
-minicom -s
-124;ssh -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh -N 10.14.4.5 -L 8117:10.64.1.17:5900
-vim
-ssh -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1200
-ssh 10.64.0.166
-ssh 10.64.0.11
-git clone ssh://git@git.parallelwireless.net:7999/~ozaharia/samba.git
-scp -Cr samba 10.64.0.11:/home/jspilman
-ssh 10.64.0.11
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1080
-ssh root@10.64.0.166
-ssh 10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-vim 
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1200
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ping 10.53.1.105
-vim ~/.ssh/config
-ssh 10.13.0.2
-ssh 10.14.4.5
-vim .ssh/config
-ls
-rm -rf CryptoMobile
-sudo rm -rf CryptoMobile
-ls
-rm core.db
-rm layer1MsgEncoderDebug.txt
-rm JoeSpilman.ovpn
-rm test_r62.2.tst_run_0_93770.cell0.log
-rm -rf samba
-ls
-ls octave
-scp 10.13.0.2:/home/jspilman/vru-5g-phy-20210618.1121-e411d49a .
-scp -Cr 10.13.0.2:/home/jspilman/vru-5g-phy-20210618.1121-e411d49a .
-ranger
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-scp -Cr vru-5g-phy-20210618.1121-e411d49a 10.64.0.166:/home/uklab
-scp -Cr vru-5g-phy-20210618.1121-e411d49a uklab@10.64.0.166:/home/uklab
-scp -Cr vru-5g-phy-20210618.1121-e411d49a uklab@10.64.1.17:/home/uklab
-ranger
-xrandr --output VGA-1 --mode 1920x1080
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh 10.13.0.2
-ssh 10.64.0.166
-scp 10.64.0.166:/home/jspilman/setup_du_65001_3_VFs.sh .
-ssh-copy-id -i .ssh/id_rsa 10.64.0.166
-xrandr --output VGA-1 --mode 1920x1200
-ssh 10.64.0.166
-ssh 10.64.0.96
-vim .ssh/known_hosts
-ssh 10.64.0.96
-ssh root@10.64.0.96
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-vim .ssh/known_hosts
-ssh root@10.64.0.166
-ls
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1080
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1200
-ssh root@10.64.0.166
-ssh-copy-id -i .ssh/id_rsa root@10.64.0.166
-ssh root@10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-ls
-vi vru-5g-phy-20210618.1121-e411d49a/xran/app/run_o_du.sh
-ls
-xrandr --output VGA-1 --mode 1920x1080
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1200
-ssh root@10.64.0.166
-ls
-scp -Cr vru-5g-phy-20210618.1121-e411d49a root@10.64.0.166:/root
-ssh root@10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh 10.64.2.0
-ssh root@10.64.2.0
-xrandr --output VGA-1 --mode 1920x1080
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1200
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1080
-xrandr --output VGA-1 --mode 1920x1200
-ssh 10.64.0.166
-ssh root@10.64.0.166
-ping 10.13.0.2
-ping 10.62.102.27
-ssh root@10.62.102.28
-ssh root@10.52.101.169
-ssh 10.62.27.15
-ssh root@10.62.27.15
-ssh -p 2024 root@10.64.27.15
-ssh -p 2024 root@10.62.27.15
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-ssh 10.64.0.11
-xrandr --output VGA-1 --mode 1920x1080
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-poweroff
-vim
-q
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ping 10.14.4.5
-10.64.0.96
-ping 10.64.0.96
-ssh 10.14.4.5
-ping 10.64.1.17
-ping 10.64.0.96
-ping 10.64.0.166
-ping 10.64.0.121
-ping 10.64.0.166
-man ssh
-ssh -f -N -p 2024 root@10.62.27.15 -L 8169:10.52.101.169:8080
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1200
-scp Documents/setup.sh uklab@10.64.1.17:/home/uklab/vBBU/_Vlan_Scripts
-scp Documents/setup.sh uklab@10.64.1.17:/home/uklab/vBBU_Vlan_Scripts
-scp Documents/env_var_du.sh uklab@10.64.1.17:/home/uklab/vBBU_Vlan_Scripts
-xrandr --output VGA-1 --mode 1920x1080
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-reboot
-vim
-ssh root@10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1200
-vim
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh 10.64.0.166
-ssh root@10.64.0.166
-ssh-copy-id -i .ssh/id_rsa root@10.64.0.166
-ssh root@10.64.0.166
-scp root@10.64.0.166:/opt/test.pcap .
-xrandr --output VGA-1 --mode 1920x1080
-scp root@10.64.0.166:/opt/test.pcap .
-xrandr --output VGA-1 --mode 1920x1200
-xrandr --output VGA-1 --mode 1920x1080
-xrandr --output VGA-1 --mode 1920x1200
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-xrandr --output VGA-1 --mode 1920x1080
-xrandr --output VGA-1 --mode 1920x1200
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1080
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1200
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1200
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1080
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-reboot
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-htop
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-reboot
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh 10.64.1.17
-ssh uklab@10.64.1.17
-vim
-ssh root@10.64.0.166
-ping 10.64.0.166
-ssh root@10.64.0.166
-ssh 10.64.0.166
-ssh root@10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-ssh root@10.64.0.166
-xrandr --output VGA-1 --mode 1920x1080
-ssh root@10.64.0.166
-ssh -f -N 10.14.4.5 -L 8117:10.64.1.17:5900
-man ssh
 ssh root@10.64.0.166
 man grep
 cd PW_Repositories/vru-3g-phy
@@ -854,3 +445,361 @@ git st
 git push -u origin
 ssh root@10.64.0.157
 ssh root@10.64.0.158
+sudo pacman -S urxvt xfce4-clipman xfce4-screenshooter
+sudo pacman -S urxvt
+sudo pacman -S rxvt-unicode
+sudo pacman -S xfce4-clipman-plugin 
+sudo pacman -S xfce4-screenshooter
+sudo pacman -S i3lock
+reboot
+sudo pacman -S git openssh stow
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub 
+scp ~/.ssh/id_rsa.pub 192.168.0.93:/home/joe
+git clone git@github.com:lop89df/dotfiles.git
+ls
+ls dotfiles/
+cd dotfiles/
+git status
+git checkout pw_vbox
+git log
+git pull
+git pull
+ls
+stow bash
+rm ~/.bash*
+stow bash
+stow i3
+stow git
+stow qt5
+stow vim
+stow xsession/
+sudo pacman -S i3
+sudo pacman -S ttf-hack
+sudo pacman -S ttf-font-awesome
+ls vim/.vim
+cd ..
+mkdir .vim/bundle
+ls
+ls .vim/bundle
+cd .vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git
+ls
+cd ..
+vim
+vim
+cd ~
+vim .xinitrc 
+sudo pacman -S xcape
+vim .xinitrc 
+vim .config/i3
+vim .config/i3/config 
+sudo pacman -S urxvt
+fg
+reboot
+sudo reboot
+sudo pacman -S xorg-server
+startx
+echo $PATH
+vim dotfiles/package_list.txt 
+sudo pacman -S xorg-xinit
+rebooyt
+reboot
+sudo reboot
+vim dotfiles/package_list.txt 
+sudo pacman -S chromium
+ls
+vim
+sudo pacman -S rofi
+man pacman
+pacman -Q
+man pacman 
+cd dotfiles/
+chmod 755 install.sh 
+./install.sh 
+./install.sh 
+./install.sh 
+sudo ./install.sh 
+ls
+whoami
+cd dotfiles/
+git st
+ls dotfiles/
+vim .bash_history 
+nmcli
+man nmcli
+nmcli device wifi connect VM3601664 password xvSnmy8W8zhn
+pcn ardour
+vim
+vim
+fhkjsdf
+pcn google-chrome-stable
+vim .Xresources 
+vim --version
+sudo pacman -S gvim
+vim .Xresources 
+xrdb -merge <~/.Xresources
+vim .Xresources 
+xrdb -load .Xresources
+vim dotfiles/package_list.txt 
+git clone https://aur.archlinux.org/google-chrome.git 
+cd google-chrome/
+makepkg -si
+ls
+sudo pacman -S base-devel
+makepkg -si
+cd ~/Jam_at_Joels_March22/
+ls
+cd export/
+ls
+tar -czvf Jam_at_Joels.tgz *.wav
+ls -lh
+cd ~/.vim
+ls
+cd bundle/vimproc.vim/
+ls
+make
+cd csound_stuff
+mkdir csound_repos
+cd  csound_repos
+git clone git@github.com:JoelNash-Xuuki/Iydhoti.git
+cd Iydhoti/
+git co joe_sco
+pcn csound
+sudo pacman -S pulseaudio-volumecontrol
+pcn pavucontrol
+pcn pulse-alsa
+pcn pulseaudio-alsa
+pcn csound-plugins
+ssh joe@192.168.0.109
+ssh joe2@192.168.0.109
+t
+rm -rf .vim/bundle/vimproc.vim
+cd .vim/bundle/
+cd vimproc.vim/
+ls
+make
+:q
+vim csound_project_ideas 
+groups
+ssh root@192.168.0.109
+export TERM=xterm-256color
+ssh root@192.168.0.109
+ssh joe@192.168.0.109
+ssh root@192.168.0.109
+ssh joe@192.168.0.109
+ssh root@192.168.0.109
+ssh joe@192.168.0.109
+ssh root@192.168.0.109
+ssh joe2@192.168.0.109
+ssh joel@192.168.0.109
+ssh joel@192.168.0.109
+sudo pacman -S sshd
+sudo pacman -S openssh-server
+sudo pacman -S openssh
+git st
+systemctl status sshd
+sudo systemctl start sshd
+sudo systemctl enable sshd
+ip ad
+ssh joe2@192.168.0.109
+ssh joel@192.168.0.109
+ssh joe2@192.168.0.109
+ssh joe2@192.168.0.109
+ssh joe2@192.168.0.109
+ssh joe2@192.168.0.109
+ssh joel@192.168.0.109
+cd csound_repos/Iydhoti/
+cd src
+./run 
+ssh joel@192.168.0.109
+git st
+git co main
+git fetch
+git pull
+./run 
+sudo pacman -S csound-plugins
+sudo ln -s /usr/lib/libportmidi.so.0 /usr/lib/libportmidi.so
+cd ..
+make
+./iydhoti 
+./iydhoti 
+make
+./iydhoti 
+./iydhoti 
+make
+./iydhoti 
+./iydhoti 
+./iydhoti 
+make
+./iydhoti 
+./iydhoti 
+make
+./iydhoti 
+./iydhoti 
+cd src/
+cp iydhoti_a.sco cp iydhoti_bass_repeat.sco
+cp iydhoti_a.sco iydhoti_bass_repeat.sco
+ls
+cd .
+cd ..
+./iydhoti 
+make
+rm iydhoti 
+make
+./oy
+./iydhoti 
+./iydhoti 
+sudo pacman -S tmux
+tmux -a 0
+tmux list-sessions
+clear
+ls
+vim
+vim
+make
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+./iydhoti 
+cd /etc/NetworkManager/system-connections/
+su
+su
+su
+vim csound_project_ideas
+cd csound_repos/Iydhoti/
+vim
+vim
+tmux
+tmux list-sessions
+tmux attach -t 0
+ls
+cd csound_repos/
+clear
+ls
+cd Iydhoti/
+ls
+cd src/
+clear
+tmux -ls
+tmux --ls
+tmux attach -t 0
+reboot
+reboot
+nmcli
+nmcli connection show
+nmcli --help
+nmcli device wifi connect VM5140767 password kgty2wfWrhsb
+nmcli c up id VM5140767
+nmcli device wifi list
+nmcli device wifi connect VM5140767
+nmcli radio wifi off
+nmcli radio wifi on
+nmcli device
+nmcli connection show
+nmcli device wifi connect VM5140767
+nmcli connection show
+sudo systemctl restart NetworkManager
+nmcli connection show
+nmcli device wifi connect VM5140767
+sudo nmcli device wifi connect VM5140767 password kgty2wfWrhsb
+vim /etc/NetworkManager/NetworkManager.conf 
+sudo systemctl restart NetworkManager
+sudo nmcli device wifi connect VM5140767 password kgty2wfWrhsb
+nmcli device wifi connect VM3601664
+sudo nmcli device wlp3s0 connect VM5140767 password kgty2wfWrhsb
+joe
+nmcli connection show
+sudo nmcli device wifi connect VM5140767 password kgty2wfWrhsb
+sudo nmcli device wifi connect c44a4afe-6ae8-478b-bf16-e05fe72e416c password kgty2wfWrhsb
+nmcli dev wifi list
+sudo nmcli device wifi connect VM7220464
+sudo nmcli device wifi connect VM7220464 password kgty2wfWrhsb
+nmcli dev wifi list
+nmcli device wifi connect VM7220464 password kgty2wfWrhsb
+nmcli con delete VM7220464
+nmcli device wifi connect VM7220464 password kgty2wfWrhsb
+nmcli con delete VM7220464
+sudo nmcli con delete VM7220464
+sudo nmcli device wifi connect VM7220464 password kgty2wfWrhsb
+sudo nmcli device wifi connect "VM7220464" password "kgty2wfWrhsb"
+nmcli r wifi off
+nmcli r wifi on
+nmcli d wifi list
+nmcli con delete "VM7220464"
+nmcli d wifi list
+nmcli con delete "40:0D:10:DD:AF:A1"
+sudo nmcli device wifi connect "VM7220464" password "kgty2wfWrhsb"
+sudo ps -ef | grep nm
+sudo ps -ef | grep net
+journalctl -u NetworkManager
+journalctl -u NetworkManager | less
+journalctl -u NetworkManager | less
+sudo nmcli device wifi connect "VM7220464"
+nmcli device wifi connect "VM7220464"
+nmcli dev wifi list
+nmcli d wifi connect VM7220464
+journalctl -u NetworkManager
+pcn
+pcn
+pcn
+sudo pacman -Sy archlinux-keyring
+pcn
+sudo pacman -S network-manager-applet
+nmcli connection delete VM7220464
+nmcli dev wifi list
+nmcli dev wifi connect "VM7220464"
+sudo pacman -S libgnome-keyring
+sudo pacman -S libgnome-keyring
+sudo pacman -S libsecret
+journalctl -u NetworkManager
+sudo pacman -S seahorse
+systemctl status gnome keyring
+systemctl status gnome-keyring
+systemctl status gnome-keyring-daemon
+nmcli connection delete VM7220464
+nmcli device wifi connect VM7220464 password cy9Tddnsrtcw
+journalctl -u NetworkManager
+sudo pacman -Syyu
+reboot
