@@ -1,6 +1,6 @@
 [user]
 	name = Joe Spilman
-	email = jspilman@parallelwireless.com
+	email = joe.spilman@audioscenic.com
 [push]
 	default = current
 [alias]
@@ -13,6 +13,7 @@
 	lg = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short
 	lga = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short --all
 	ri = rebase -i
+	first = rev-list --max-parents=0 HEAD
 [branch]
 	autosetuprebase = always
 [pull]
@@ -33,5 +34,3 @@
 	date = local
 [http]
 	sslVerify = false
-[url "ssh://git@git.parallelwireless.net:7999/"]
-	pushinsteadof = ssh://git@nhbsm01.parallelwireless.net:7999/

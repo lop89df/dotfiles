@@ -16,8 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
 
-Plugin 'vim-airline/vim-airline-themes'
-
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-unimpaired'
@@ -34,8 +32,6 @@ Plugin 'tpope/vim-obsession'
 
 Plugin 'tpope/vim-rhubarb'
 
-Plugin 'gcmt/taboo.vim'
-
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'vim-scripts/ReplaceWithRegister'
@@ -45,8 +41,6 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'Julian/vim-textobj-variable-segment'
 
 Plugin 'sgur/vim-textobj-parameter'
-
-Plugin 'flazz/vim-colorschemes'
 
 Plugin 'ericcurtin/CurtineIncSw.vim'
 
@@ -74,9 +68,9 @@ Plugin 'preservim/nerdtree'
 
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 
-Plugin 'godlygeek/tabular'
-
 Plugin 'plasticboy/vim-markdown'
+
+Plugin 'wincent/command-t'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,34 +92,21 @@ set sessionoptions+=globals
 """ Airline
 "============================================================================"
 
-" Enable the list of buffers
-"let g:airline#extensions#tabline#enabled = 1
-"
-"" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-let g:airline#extensions#tabline#buffer_nr_show = 0
-
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#fileformat#enabled = 0
 
-
-let g:airline_theme='gruvbox'
-
 "============================================================================"
-""" Taboo
+""" Tabline
 "============================================================================"
-
-let g:taboo_tab_format = '[%N] %f | '
-let g:taboo_renamed_tab_format = '[%N] %l | '
-
 
 let g:session_dir = '~/.vim/sessions'
 
 " Remaps for Sessions
 exec 'nnoremap <Leader>ss :Obsession ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
+set tabline=%!MyTabLine()
 
 " Our custom TabLine function
 function MyTabLine()
@@ -142,7 +123,7 @@ function MyTabLine()
     let s .= '%' . (i + 1) . 'T'
 
     " the label is made by MyTabLabel()
-    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+    let s .= ' %{MyTabLabel(' . (i + 1) . ')} |'
   endfor
 
   " after the last tab fill with TabLineFill and reset tab page nr
@@ -158,10 +139,7 @@ function MyTabLine()
     if exists(':Obsession')
         let s .= "%{ObsessionStatus()}"
         if exists('v:this_session') && v:this_session != ''
-            let s:obsession_string = v:this_session
-            let s:obsession_parts = split(s:obsession_string, '/')
-            let s:obsession_filename = s:obsession_parts[-1]
-            let s .= ' ' . s:obsession_filename . ' '
+            let s .= ' ' . v:this_session . ' '
             let s .= '%*' " Restore default color
         endif
     endif
@@ -187,6 +165,8 @@ let g:NERDTreeWinPos = "right"
 "============================================================================"
 """ Unite
 "============================================================================"
+
+"let &runtimepath.=',~/.vim/bundle/vimproc.vim/lib'
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 

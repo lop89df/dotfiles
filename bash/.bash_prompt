@@ -28,6 +28,8 @@ function __prompt {
       RED_BG=$(tput setab 124)
       GRAY=$(tput setaf 246)
       GRAY_BG=$(tput setab 246)
+      GREEN=$(tput setaf 28)
+      GREEN_BG=$(tput setab 28)
       WHITE=$(tput setaf 223)
       ORANGE_BG=$(tput setab 208)
     else
@@ -40,6 +42,8 @@ function __prompt {
       RED_BG=$(tput setab 1)
       GRAY=$(tput setaf 7)
       GRAY_BG=$(tput setab 7)
+      GREEN=$(tput setaf 2)
+      GREEN_BG=$(tput setab 2)
       WHITE=$(tput setaf 7)
       ORANGE_BG=$(tput setab 3)
     fi
@@ -50,22 +54,24 @@ function __prompt {
       local STATE=237
       local RED_BG=124
       local ORANGE_BG=208
+      local GREEN_BG=28
     else
       local STATE=0
       local RED_BG=1
       local ORANGE_BG=3
-    fi
-    # check for unstaged changes
-    if ! git diff --quiet --ignore-submodules --cached; then
-      STATE="${RED_BG}"  # Unstaged changes (not yet added)
-    fi
-    # check for untracked files
-    if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
-      STATE="${RED_BG}"  # New files (not yet added)
+      local GREEN_BG=2
     fi
     # check for uncommitted changes in the index
     if ! git diff-files --quiet --ignore-submodules --; then
       STATE="${ORANGE_BG}"  # Changes detected (not yet committed)
+    fi
+    # check for unstaged changes
+    if ! git diff --quiet --ignore-submodules --cached; then
+      STATE="${GREEN_BG}"  # Unstaged changes (not yet added)
+    fi
+    # check for untracked files
+    if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+      STATE="${RED_BG}"  # New files (not yet added)
     fi
     printf '%s' "${STATE}"
   }
