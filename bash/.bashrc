@@ -24,8 +24,6 @@ bind -m vi-insert "\C-e.":end-of-line
 #PS1='[\u@\h \W]\$ '
 #
 
-source "${HOME}/repos/env_setup.sh"
-
 unameOut="$(uname -s)"
 
 if [ "$(expr substr $(uname) 1 4)" == "MSYS" ]; then

@@ -60,8 +60,6 @@ Plugin 'LucHermitte/local_vimrc'
 
 Plugin 'vim-latex/vim-latex'
 
-Plugin 'Dave-Elec/gruvbox'
-
 Plugin 'urbainvaes/vim-tmux-pilot'
 
 Plugin 'preservim/nerdtree'
@@ -71,6 +69,8 @@ Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'plasticboy/vim-markdown'
 
 Plugin 'wincent/command-t'
+
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
