@@ -3,78 +3,79 @@ set encoding=utf-8
 
 filetype off                  " required
 
-""" Vundle & Plugins
+""" VimPlug & Plugins
 "
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'vim-airline/vim-airline'
 
-Plugin 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sensible'
 
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
 
-Plugin 'tpope/vim-eunuch'
+Plug 'tpope/vim-obsession'
 
-Plugin 'tpope/vim-obsession'
+Plug 'tpope/vim-rhubarb'
 
-Plugin 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'airblade/vim-gitgutter'
+Plug 'vim-scripts/ReplaceWithRegister'
 
-Plugin 'vim-scripts/ReplaceWithRegister'
+Plug 'kana/vim-textobj-user'
 
-Plugin 'kana/vim-textobj-user'
+Plug 'Julian/vim-textobj-variable-segment'
 
-Plugin 'Julian/vim-textobj-variable-segment'
+Plug 'sgur/vim-textobj-parameter'
 
-Plugin 'sgur/vim-textobj-parameter'
+Plug 'ericcurtin/CurtineIncSw.vim'
 
-Plugin 'ericcurtin/CurtineIncSw.vim'
+Plug 'sjl/gundo.vim'
 
-Plugin 'sjl/gundo.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'Shougo/unite.vim'
 
-Plugin 'Shougo/unite.vim'
+Plug 'thinca/vim-qfreplace'
 
-Plugin 'Shougo/vimproc.vim'
+Plug 'LucHermitte/lh-vim-lib'
 
-Plugin 'thinca/vim-qfreplace'
+Plug 'LucHermitte/local_vimrc'
 
-Plugin 'LucHermitte/lh-vim-lib'
+Plug 'vim-latex/vim-latex'
 
-Plugin 'LucHermitte/local_vimrc'
+Plug 'Dave-Elec/gruvbox'
 
-Plugin 'vim-latex/vim-latex'
+Plug 'urbainvaes/vim-tmux-pilot'
 
-Plugin 'Dave-Elec/gruvbox'
+Plug 'preservim/nerdtree'
 
-Plugin 'urbainvaes/vim-tmux-pilot'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
-Plugin 'preservim/nerdtree'
+Plug 'plasticboy/vim-markdown'
 
-Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plug 'wincent/command-t'
 
-Plugin 'plasticboy/vim-markdown'
-
-Plugin 'wincent/command-t'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
 
 let $VIM = $HOME."/.vim"
 
