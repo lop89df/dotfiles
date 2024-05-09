@@ -250,6 +250,8 @@ function! EditConfig(what, ext = '.vim')
     let l:dir = split(&runtimepath,',')[0]
     if a:what == 'vimrc'
         let l:file = expand($MYVIMRC)
+    elseif a:what == 'git'
+        let l:file = expand($HOME).'/.gitconfig'
     elseif a:what == 'tmux'
         let l:file = expand($HOME).'/.tmux.conf'
     elseif a:what == 'i3'
@@ -275,6 +277,7 @@ function! EditConfig(what, ext = '.vim')
 endf
 nmap <leader>ev :call EditConfig('vimrc')<CR>
 nmap <leader>ef :call EditConfig('ftplugin')<CR>
+nmap <leader>eg :call EditConfig('git')<CR>
 nmap <leader>et :call EditConfig('tmux')<CR>
 nmap <leader>ei :call EditConfig('i3')<CR>
 nmap <leader>es :call EditConfig('i3status')<CR>
