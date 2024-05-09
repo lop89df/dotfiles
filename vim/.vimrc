@@ -369,15 +369,26 @@ set nospell
 
 set modeline
 
+"============================================================================"
 """ Key Bindings
+"============================================================================"
 
 map <F2> :redraw!<CR>
 
+" Visual mode indentation
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+" jump to last cursor position
+noremap ' `
+
+" Select (charwise) the contents of the current line, excluding indentation.
+nnoremap vv ^vg_
+
+" Toggle all folds
 nnoremap <leader><Space> za
 
+" Concise window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -385,29 +396,45 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <C-t> :tabnew<CR>
 
-""" git log --all
-nmap <leader>gv :Gitv --all<CR>
+" display the number of matches for the last search
+nmap <Leader># :%s:<C-R>/::gn<CR>
 
-function! s:gTabDiff(branch)
-	tabedit %|Git diff string(a:branch)
-endf
+" center cursor after search and open folds
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
-command! -nargs=1 GdiffInTab call s:gTabDiff(<f-args>)
+" same when jumping around
+nnoremap g; g;zzzv
+nnoremap g, g,zzzv
+nnoremap <c-o> <c-o>zzzv
+nnoremap <c-i> <c-i>zzzv
+
+" add line without changing position or leaving mode
+noremap <silent> <Leader>o :set paste<CR>m`o<ESC>``:set nopaste<CR>
+noremap <silent> <Leader>O :set paste<CR>m`O<ESC>``:set nopaste<CR>
 
 "
-" Sample command W
-" 
+" Write file with sudo
+"
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-""" Diff current buffer
-
-set diffopt+=vertical
-
-function! s:DiffWithSaved()
-	let filetype=&ft
-	diffthis
-	vnew | r # | normal! 1Gdd
-	diffthis
-	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+""" Wipe empty buffers
+function s:WipeBuffersWithoutFiles()
+    let bufs=filter(range(1, bufnr('$')), 'bufexists(v:val) && '.
+                                          \'empty(getbufvar(v:val, "&buftype")) && '.
+                                          \'!filereadable(bufname(v:val))')
+    if !empty(bufs)
+        execute 'bwipeout' join(bufs)
+    endif
 endfunction
-com! DiffSaved call s:DiffWithSaved()
+command BWnex call s:WipeBuffersWithoutFiles()
+
+"
+" Permanent very-magic mode
+"
+nnoremap / /\v
+vnoremap / /\v
+cnoremap %s/ %smagic/
+cnoremap \>s/ \>smagic/
+nnoremap :g/ :g/\v
+nnoremap :g// :g//
