@@ -1,36 +1,44 @@
 [user]
-	name = Joe Spilman
-	email = joe.spilman@audioscenic.com
+    name = Joseph Spilman
+    email = joseph.spilman@audioscenic.com
 [push]
-	default = current
+    default = current
 [alias]
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	st = status
-	co = checkout
-	ci = commit -v
-	br = branch
-	lg = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short
-	lga = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short --all
-	ri = rebase -i
-	first = rev-list --max-parents=0 HEAD
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    st = status
+    sw = switch
+    ci = commit
+    br = branch
+    lg = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short
+    lga = log --graph --cherry-mark --boundary --pretty=tformat:'%C(blue bold)%cd %C(auto)%h%d %s' --date=short --all
+    ri = rebase -i
+    rc = rebase --continue
+    ra = rebase --abort
+    fp = fetch --prune
+    first = rev-list --max-parents=0 HEAD
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [pull]
-	rebase = true
+    rebase = true
+[commit]
+    verbose = true
+[rebase]
+    autosquash = true
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim
-	autocrlf = input
-	eol = native
-	safecrlf = false
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    autocrlf = input
+    eol = native
+    safecrlf = false
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [log]
-	date = local
+    date = local
 [http]
-	sslVerify = false
+    sslVerify = false
+

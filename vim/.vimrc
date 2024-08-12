@@ -70,6 +70,8 @@ Plug 'plasticboy/vim-markdown'
 
 Plug 'wincent/command-t'
 
+Plug 'junegunn/gv.vim'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -241,7 +243,6 @@ let g:Tex_DefaultTargetFormat='pdf'
 
 let g:vim_markdown_folding_disabled = 1
 
-
 "============================================================================"
 """ edit configs  {{{2
 "============================================================================"
@@ -333,6 +334,8 @@ set cursorline
 """ Window Arrangment
 set splitright
 set splitbelow
+
+set diffopt+=vertical
 
 """ Menus & Sessions
 set noswapfile
