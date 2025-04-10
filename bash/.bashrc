@@ -10,6 +10,7 @@ done
 alias ls='ls --color=auto'
 
 # Git
+alias gg='git grep -n'
 alias gaa='git add --all'
 alias gsu='git submodule update --recursive'
 alias gri='git rebase -i'
@@ -21,6 +22,12 @@ alias gsii='git stash --include-untracked'
 alias gfp='git push --force-with-lease'
 alias grp='git remote prune origin'
 
+# Conan
+alias cel='conan editable list'
+alias cea='conan editable add'
+alias cer='conan editable remove --refs'
+alias cb='conan build'
+
 set -o vi
 bind -m vi-command ".":insert-last-argument
 bind -m vi-command 'Control-l: clear-screen'
@@ -30,7 +37,11 @@ bind -m vi-insert "\C-e.":end-of-line
 #PS1='[\u@\h \W]\$ '
 #
 
-source "${HOME}/repos/env_setup.sh"
+#pyenv_dir=$HOME/.pyenv/pyenv-win
+#export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$HOME/$PATH
+#export PYENV=$pyenv_dir
+#export PYENV_HOME=$pyenv_dir
+#export PYENV_ROOT=$pyenv_dir
 
 unameOut="$(uname -s)"
 
