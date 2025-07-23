@@ -2,3 +2,5 @@
 "\e[A":history-search-backward
 ## arrow down
 "\e[B":history-search-forward
+## Turn off the alarms
+set bell-style none

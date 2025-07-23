@@ -2,11 +2,6 @@
 # ~/.bashrc
 #
 
-for file in ${HOME}/.bashrc.d/*.bashrc;
-do
-  source "$file"
-done
-
 alias ls='ls --color=auto'
 
 # Git
@@ -25,8 +20,12 @@ alias grp='git remote prune origin'
 # Conan
 alias cel='conan editable list'
 alias cea='conan editable add'
-alias cer='conan editable remove --refs'
+alias cer='conan editable remove'
+alias cerr='conan editable remove --refs'
 alias cb='conan build'
+
+# Vim
+alias vimter='vim -c ":term ++curwin"'
 
 set -o vi
 bind -m vi-command ".":insert-last-argument
@@ -37,11 +36,11 @@ bind -m vi-insert "\C-e.":end-of-line
 #PS1='[\u@\h \W]\$ '
 #
 
-#pyenv_dir=$HOME/.pyenv/pyenv-win
-#export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$HOME/$PATH
-#export PYENV=$pyenv_dir
-#export PYENV_HOME=$pyenv_dir
-#export PYENV_ROOT=$pyenv_dir
+pyenv_dir=$HOME/.pyenv/pyenv-win
+export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$HOME/$PATH
+export PYENV=$pyenv_dir
+export PYENV_HOME=$pyenv_dir
+export PYENV_ROOT=$pyenv_dir
 
 unameOut="$(uname -s)"
 
@@ -53,8 +52,15 @@ if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
   export PATH=$PATH:/c/MinGW/bin
 fi
 
+export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
+
+bind 'set bell-style none'
+
 # Custom gruvbox-powerline prompt
 #[[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
+
+cd /c/Dev/
+if [ ! -n "$VIMRUNTIME" ]; then vimter; fi
 
 ####### History Config #######
 
@@ -68,5 +74,4 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 
 # Set Maximum number of lines in history
 export HISTSIZE=10000
-
 

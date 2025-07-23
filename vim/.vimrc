@@ -16,7 +16,9 @@ call plug#begin()
 
 Plug 'tpope/vim-fugitive'
 
-Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-surround'
+
+Plug 'rbong/vim-flog'
 
 Plug 'vim-scripts/ReplaceWithRegister'
 
@@ -29,8 +31,6 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'tpope/vim-obsession'
 
 Plug 'airblade/vim-gitgutter'
-
-Plug 'github/copilot.vim', { 'tag': 'v1.11.3' }
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -45,9 +45,11 @@ let mapleader = "\<Space>"
 
 set clipboard=unnamed
 
-"============================================================================"
+set belloff=all
+
+"============================================================================"
 " Tab and textwidth defaults
-"============================================================================"
+"============================================================================"
 set textwidth=100
 
 set shiftwidth=4
@@ -68,7 +70,15 @@ let g:gitgutter_eager = 0
 ""============================================================================"
 """" vim-fugitive
 ""============================================================================"
-noremap <Leader>g  :Git<CR>
+noremap <Leader>g :vert Git<CR>
+
+command -nargs=* Glg vert Git! lga
+
+""============================================================================"
+"""" vim-flog
+""============================================================================"
+
+let g:flog_use_internal_lua = 0
 
 "============================================================================"
 """ edit configs  {{{2
@@ -81,16 +91,10 @@ function! EditConfig(what, ext = '.vim')
         let l:file = expand($HOME).'/.gitconfig'
     elseif a:what == 'tmux'
         let l:file = expand($HOME).'/.tmux.conf'
-    elseif a:what == 'i3'
-	let l:file = expand($HOME).'/.config/i3/config'
-    elseif a:what == 'rifle'
-	let l:file = expand($HOME).'/.config/ranger/rifle.conf'
+    elseif a:what == 'inputrc'
+        let l:file = expand($HOME).'/.inputrc'
     elseif a:what == 'bashrc'
-	let l:file = expand($HOME).'/.bashrc'
-    elseif a:what == 'zshrc'
-	let l:file = expand($HOME).'/.zshrc'
-    elseif a:what == 'i3status'
-	let l:file = expand($HOME).'/.config/i3status/config'
+        let l:file = expand($HOME).'/.bashrc'
     elseif ! isdirectory(globpath(l:dir, a:what))
         echoe a:what." is not valid!"
     elseif empty(&filetype)
@@ -99,18 +103,15 @@ function! EditConfig(what, ext = '.vim')
         let l:file = l:dir.'/'.a:what.'/'.&filetype.a:ext
     endif
 
-    execute ':e '.file
+    execute ':vsp '.file
     execute ':lcd %:p:h'
 endf
 nmap <leader>ev :call EditConfig('vimrc')<CR>
 nmap <leader>ef :call EditConfig('ftplugin')<CR>
 nmap <leader>eg :call EditConfig('git')<CR>
 nmap <leader>et :call EditConfig('tmux')<CR>
-nmap <leader>ei :call EditConfig('i3')<CR>
-nmap <leader>es :call EditConfig('i3status')<CR>
+nmap <leader>ei :call EditConfig('inputrc')<CR>
 nmap <leader>eb :call EditConfig('bashrc')<CR>
-nmap <leader>ez :call EditConfig('zshrc')<CR>
-nmap <leader>er :call EditConfig('rifle')<CR>
 
 nnoremap <leader>r :source $MYVIMRC<CR>
 
@@ -161,10 +162,20 @@ set colorcolumn=+1
 """ Don't wrap lines by default
 set nowrap
 
+""" Toggle line wrapping
+noremap yow :set wrap!<CR>
+
 set cursorline
 
 """ Window Arrangment
 set diffopt+=vertical
+
+set splitright
+set splitbelow
+
+""" Netrw Directory Listing
+
+let g:netrw_altv=1
 
 """ Menus & Sessions
 set noswapfile
