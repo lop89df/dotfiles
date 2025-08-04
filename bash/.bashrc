@@ -1,6 +1,21 @@
 #
 # ~/.bashrc
 #
+if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
+  cd /c/Dev/
+  export PATH=$PATH:/c/MinGW/bin
+
+  pyenv_dir=$HOME/.pyenv/pyenv-win
+  export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$PATH
+  export PYENV=$pyenv_dir
+  export PYENV_HOME=$pyenv_dir
+  export PYENV_ROOT=$pyenv_dir
+
+  export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
+else
+  # Custom gruvbox-powerline prompt
+  [[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
+fi
 
 alias ls='ls --color=auto'
 
@@ -15,14 +30,12 @@ alias gsp='git stash pop'
 alias gss='git stash'
 alias gsii='git stash --include-untracked'
 alias gfp='git push --force-with-lease'
-alias grp='git remote prune origin'
 
 # Conan
 alias cel='conan editable list'
 alias cea='conan editable add'
 alias cer='conan editable remove'
 alias cerr='conan editable remove --refs'
-alias cb='conan build'
 
 # Vim
 alias vimter='vim -c ":term ++curwin"'
@@ -32,9 +45,6 @@ bind -m vi-command ".":insert-last-argument
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert "\C-a.":beginning-of-line
 bind -m vi-insert "\C-e.":end-of-line
-# Default prompt
-#PS1='[\u@\h \W]\$ '
-#
 
 unameOut="$(uname -s)"
 
@@ -42,26 +52,9 @@ if [ "$(expr substr $(uname) 1 4)" == "MSYS" ]; then
   export PATH=$PATH:/mingw64/bin
 fi
 
-if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
-  export PATH=$PATH:/c/MinGW/bin
-
-  pyenv_dir=$HOME/.pyenv/pyenv-win
-  export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$PATH
-  export PYENV=$pyenv_dir
-  export PYENV_HOME=$pyenv_dir
-  export PYENV_ROOT=$pyenv_dir
-
-  cd /c/Dev/
-
-  export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
-
-else
-  # Custom gruvbox-powerline prompt
-  [[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
-fi
-
 bind 'set bell-style none'
 
+# Start a shell in Vim (Avoiding recursive shells)
 if [ ! -n "$VIMRUNTIME" ]; then vimter; fi
 
 ####### History Config #######
