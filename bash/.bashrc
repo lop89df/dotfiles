@@ -36,12 +36,6 @@ bind -m vi-insert "\C-e.":end-of-line
 #PS1='[\u@\h \W]\$ '
 #
 
-pyenv_dir=$HOME/.pyenv/pyenv-win
-export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$HOME/$PATH
-export PYENV=$pyenv_dir
-export PYENV_HOME=$pyenv_dir
-export PYENV_ROOT=$pyenv_dir
-
 unameOut="$(uname -s)"
 
 if [ "$(expr substr $(uname) 1 4)" == "MSYS" ]; then
@@ -50,16 +44,24 @@ fi
 
 if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
   export PATH=$PATH:/c/MinGW/bin
-fi
 
-export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
+  pyenv_dir=$HOME/.pyenv/pyenv-win
+  export PATH=$pyenv_dir/bin:$pyenv_dir/shims:$PATH
+  export PYENV=$pyenv_dir
+  export PYENV_HOME=$pyenv_dir
+  export PYENV_ROOT=$pyenv_dir
+
+  cd /c/Dev/
+
+  export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
+
+else
+  # Custom gruvbox-powerline prompt
+  [[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
+fi
 
 bind 'set bell-style none'
 
-# Custom gruvbox-powerline prompt
-#[[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
-
-cd /c/Dev/
 if [ ! -n "$VIMRUNTIME" ]; then vimter; fi
 
 ####### History Config #######
