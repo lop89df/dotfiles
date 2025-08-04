@@ -32,6 +32,8 @@ Plug 'tpope/vim-obsession'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'morhetz/gruvbox'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -47,9 +49,22 @@ set clipboard=unnamed
 
 set belloff=all
 
-"============================================================================"
+"============================================================================"
+" WSL yank support
+"============================================================================"
+
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+
+"============================================================================"
 " Tab and textwidth defaults
-"============================================================================"
+"============================================================================"
 set textwidth=100
 
 set shiftwidth=4
