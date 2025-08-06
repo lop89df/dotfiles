@@ -2,7 +2,6 @@
 # ~/.bashrc
 #
 if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
-  cd /c/Dev/
   export PATH=$PATH:/c/MinGW/bin
 
   pyenv_dir=$HOME/.pyenv/pyenv-win
@@ -10,6 +9,9 @@ if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
   export PYENV=$pyenv_dir
   export PYENV_HOME=$pyenv_dir
   export PYENV_ROOT=$pyenv_dir
+
+  if [ -d "/c/dev" ]; then cd /c/dev/; fi
+  if [ -f "venv/conan/Scripts/activate" ]; then source venv/conan/Scripts/activate; fi
 
   export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
 else
