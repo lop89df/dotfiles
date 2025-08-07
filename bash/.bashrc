@@ -14,9 +14,11 @@ if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
   if [ -f "venv/conan/Scripts/activate" ]; then source venv/conan/Scripts/activate; fi
 
   export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
-else
+
+elif [ $(uname) == "Linux" ]; then
   # Custom gruvbox-powerline prompt
   [[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
+  if [ -d "${HOME}/dev" ]; then cd $HOME/dev/; fi
 fi
 
 alias ls='ls --color=auto'
