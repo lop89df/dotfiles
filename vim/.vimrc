@@ -34,6 +34,14 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'morhetz/gruvbox'
 
+if has("unix")
+    Plug 'Shougo/unite.vim'
+
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+    Plug 'thinca/vim-qfreplace'
+endif
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -94,6 +102,60 @@ command -nargs=* Glg vert Git! lga
 ""============================================================================"
 
 let g:flog_use_internal_lua = 0
+
+if has("unix")
+    "============================================================================"
+    """ Unite
+    "============================================================================"
+
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+    noremap <leader>f :<C-u>Unite -start-insert file_rec/async<CR>
+    noremap <leader>b :<C-u>Unite -start-insert buffer<CR>
+
+    if executable('ag')
+    let g:unite_source_rec_async_command =
+    \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', '']
+    endif
+
+    " unite-grep {{{3
+    " seems not respected
+    let g:unite_source_grep_max_candidates = 2000
+    if executable('ag')
+        " Use ag in unite grep source.
+        let g:unite_source_grep_command = 'ag'
+        let g:unite_source_grep_default_opts = '--smart-case --vimgrep --ignore ''build*/'' --ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+        let g:unite_source_grep_recursive_opt = ''
+    end
+    nnoremap <silent> <leader>a :<C-u>Unite grep:.::<CR>
+    nnoremap <silent> <leader>s :<C-u>Unite file_rec/async:.::<C-R><C-w><CR>
+    nnoremap <silent> <leader>s :<C-u>Unite grep:.::<C-R><C-w><CR>
+    command! -nargs=1 Ag Unite grep:.::<args>
+
+    nnoremap <silent> <leader>gs :Git<CR>
+    nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+    nnoremap <silent> <leader>gc :Gcommit -v<CR>
+    nnoremap <silent> <leader>ga :Gwrite<cr>
+    nnoremap <silent> <leader>gb :Gblame<cr>
+
+    " unite-menu {{{3
+    let g:unite_source_menu_menus = {}
+    let g:unite_source_menu_menus.fugitive = { 'description' : 'fugitive menu'}
+    let g:unite_source_menu_menus.fugitive.command_candidates = {
+                \ 'Gstatus <Leader>gs' : 'Gstatus',
+                \ 'Gcommit -v <Leader>gc' : 'Gcommit -v',
+                \ 'Glog' : 'Glog',
+                \}
+
+    nnoremap <silent> <leader>gg :<C-u>Unite menu:fugitive<CR>
+
+    call unite#custom#profile('default', 'context', {
+    \ 'start_profile' : 20,
+    \ 'winheight' : 20,
+    \ 'direction' : 'botright',
+    \ })
+
+endif
 
 "============================================================================"
 """ edit configs  {{{2
