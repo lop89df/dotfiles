@@ -10,15 +10,16 @@ if [ "$(expr substr $(uname) 1 7)" == "MINGW64" ]; then
   export PYENV_HOME=$pyenv_dir
   export PYENV_ROOT=$pyenv_dir
 
-  if [ -d "/c/dev" ]; then cd /c/dev/; fi
-  if [ -f "venv/conan/Scripts/activate" ]; then source venv/conan/Scripts/activate; fi
+  [[ -d "/c/dev" ]] && cd "/c/dev/"
+  [[ -f "venv/conan/Scripts/activate" ]] && source "venv/conan/Scripts/activate"
 
   export PATH="/c/Program\ Files\ \(x86\)/Vim/vim91:${PATH}"
 
 elif [ $(uname) == "Linux" ]; then
   # Custom gruvbox-powerline prompt
-  [[ -r "${HOME}/.bash_prompt" ]] && [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
-  if [ -d "${HOME}/dev" ]; then cd $HOME/dev/; fi
+  [[ -f "${HOME}/.bash_prompt" ]] && source "${HOME}/.bash_prompt"
+  [[ -d "${HOME}/dev" ]] && cd "${HOME}/dev/"
+  [[ -f "${HOME}/.git-completion.bash" ]] && source "${HOME}/.git-completion.bash"
 fi
 
 alias ls='ls --color=auto'
