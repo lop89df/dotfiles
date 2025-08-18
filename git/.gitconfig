@@ -17,6 +17,7 @@
     ra = rebase --abort
     fp = fetch --prune
     first = rev-list --max-parents=0 HEAD
+    tidy = "!f() { CB=$(git rev-parse --abbrev-ref HEAD) && git switch develop && git pull --prune && git branch --delete $CB ; }; f"
 [branch]
     autosetuprebase = always
 [pull]
